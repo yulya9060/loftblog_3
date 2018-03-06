@@ -16,7 +16,7 @@ const PATHS = {
     source: path.join(__dirname,'source'),
     build: path.join(__dirname,'build')
 };
-const htmlFiles = ["welcome","about"];
+var htmlFiles = ["welcome","about"];
 // htmlFiles.forEach(html => {
 //     new HtmlWebpackPlugin({
 //         filename: html+'.html',
