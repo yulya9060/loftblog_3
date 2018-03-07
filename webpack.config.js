@@ -16,20 +16,14 @@ const PATHS = {
     source: path.join(__dirname,'source'),
     build: path.join(__dirname,'build')
 };
-var htmlFiles = ["welcome","about"];
-// htmlFiles.forEach(html => {
-//     new HtmlWebpackPlugin({
-//         filename: html+'.html',
-//         chunks: [html,'common'],
-//         template: PATHS.source + '/pages/'+html+'\/'+html+'.pug'
-//     })
-// });
 
 const common = merge([
     {
     entry: {
         'welcome': PATHS.source + '/pages/welcome/welcome.js',
-        'about': PATHS.source + '/pages/about/about.js'
+        'about': PATHS.source + '/pages/about/about.js',
+        'blog': PATHS.source + '/pages/blog/blog.js',
+        'works': PATHS.source + '/pages/works/works.js'
     },
     output: {
         path: PATHS.build,
@@ -37,25 +31,28 @@ const common = merge([
     },
     plugins: 
     [
-        // new HtmlWebpackPlugin({
-        //     filename: 'main.html',
-        //     chunks: ['main','common'],
-        //     template: PATHS.source + '/pages/main/main.pug'
-        // }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'about.html',
-        //     chunks: ['about','common'],
-        //     template: PATHS.source + '/pages/about/about.pug'
-        // }),
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: "common"
-        // }),
-        htmlFiles.forEach(html => {
-            new HtmlWebpackPlugin({
-                filename: html+'.html',
-                chunks: [html,'common'],
-                template: PATHS.source + '/pages/'+html+'\/'+html+'.pug'
-            })
+        new HtmlWebpackPlugin({
+            filename: 'welcome.html',
+            chunks: ['welcome','common'],
+            template: PATHS.source + '/pages/welcome/welcome.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            chunks: ['about','common'],
+            template: PATHS.source + '/pages/about/about.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'blog.html',
+            chunks: ['blog','common'],
+            template: PATHS.source + '/pages/blog/blog.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'works.html',
+            chunks: ['works','common'],
+            template: PATHS.source + '/pages/works/works.pug'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "common"
         }),
         new CleanWebpackPlugin(PATHS.build),
         new OptimizeCssAssetsWebpackPlugin({
