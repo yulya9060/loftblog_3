@@ -1,0 +1,10 @@
+include ./header
+include ./content
+include ./footer
+
+mixin wrapper(className,page)
+    - var elements = ['header','content','footer'] 
+    div(class=`wrapper wrapper-${className}`)
+        each item in elements
+            +#{item}(`${item}-${className}`)
+
