@@ -1,1 +1,27 @@
 @import '../../assets/sass/base.scss';
+
+.wrapper{
+    max-width: 1800px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header{
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.content{
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.footer{
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.wrapper-welcome{
+    background: url('../../images/bkgs/forest.png');
+}

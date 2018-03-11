@@ -73,7 +73,7 @@ module.exports = function(env) {
     return merge([
       common,
       extractCSS(),
-      uglifyJS({ useSourceMap: true }),
+      uglifyJS({ useSourceMap: true })
     //    favicon()
     ]);
   }
