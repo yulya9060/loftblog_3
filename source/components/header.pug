@@ -1,6 +1,6 @@
 include ./roundHref
 
-mixin header(className)
-    header(class=`header ${className}`)
-        if className = 'welcome'
+mixin header(className,className2)
+    header(class=`${className2} ${className}`)
+        if className = 'header-welcome'
             +roundHref('main-link welcome__main-link','','Авторизоваться')
