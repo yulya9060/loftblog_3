@@ -1,15 +1,15 @@
 module.exports = function() {
-    return {
+  return {
     module: {
-    rules: [
-    {
-    test: /\.(jpg|png|svg)$/,
-    loader: 'file-loader',
-    options: {
-    name: './images/[name].[ext]'
+      rules: [
+        {
+          test: /\.(jpg|png|svg)$/,
+          loader: 'file-loader',
+          options: {
+            name: './images/[name].[ext]',
+          },
+        },
+      ],
     },
-    },
-    ],
-    },
-    };
-   };
+  };
+};

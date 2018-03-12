@@ -1,0 +1,6 @@
+include ./roundHref
+
+mixin header(className)
+    header(class=`header ${className}`)
+        if className = 'welcome'
+            +roundHref('main-link welcome__main-link','','Авторизоваться')

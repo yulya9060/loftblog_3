@@ -1,4 +1,26 @@
-.h2{
-    color: red;
-    font-size: 42px;
+@import '../../assets/sass/base.scss';
+
+.wrapper-welcome{
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+    background-image: url('../../images/bkgs/forest.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+}
+
+.header-welcome{
+    padding: 24px 50px 178px 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.welcome-authorization{
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: $white;
+    font-size: 16px;
+    border: 1px solid $white;
+    border-radius: 2px;
 }

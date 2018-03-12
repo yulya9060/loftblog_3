@@ -1,15 +1,15 @@
 module.exports = function(paths) {
-    return {
+  return {
     module: {
-    rules: [
-    {
-    test: /\.scss$/,
-    include: paths,
-    use: [
-    'style-loader',
-    'css-loader',
-    'sass-loader']}]}
-    };
-   };
+      rules: [
+        {
+          test: /\.scss$/,
+          include: paths,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader']}]},
+  };
+};
 
 console.log('настройки sass');

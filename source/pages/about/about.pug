@@ -1,5 +1,8 @@
 extends ../base 
+include ../../components/wrapper
+
 block head
-    title about page
-block content 
-    h2.h2 About page
+    title Обо мне
+
+block wrapper
+    +wrapper('about','about')
