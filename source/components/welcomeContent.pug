@@ -3,15 +3,9 @@ include ./_mixins
 .content.welcome__content
     .welcome-describe
         .welcome-describe__img
-            img.welcome__photo(src=require("../images/photo.jpg"), alt="")
+            img.welcome__photo(src=require("../../images/photo.jpg"), alt="")
         .welcome-describe__text
             h2.welcome-describe__title Салтрукович Юлия
             .welcome-describe__desc Личный сайт веб-разработчика
-        +socialIcons('social-icons',1)
-        ul.welcome-btns
-            li.welcome-btns__btn
-                a.welcome-btns__link(href="")
-            li.welcome-btns__btn
-                a.welcome-btns__link(href="")
-            li.welcome-btns__btn
-                a.welcome-btns__link(href="")
+        +socialIcons('social', [{link:'http://vk.com',img: '#vk'},{link:'http://vk.com',img: '#github'},{link:'http://vk.com',img: '#in'}])
+        include ./welcomeBtns

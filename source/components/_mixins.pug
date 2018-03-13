@@ -9,9 +9,10 @@ mixin footer(className)
             h2 Подвал
             
 mixin socialIcons(className,items)
-    .(class=`${className}`)
+    div(class=`${className}`)
         ul(class=`${className}__list`)
-        each item in items
-            li(class=`${className}__item`)
-                a(class=`${className}__link` href="https://vk.com/id19701551")
-                    img(class=`${className}__img`)
+            each item in items
+                li(class=`${className}__item`)
+                    a(class=`${className}__link` href=`${item.link}`)
+                        svg(class=`${className}__img`)
+                            use(xlink:href=require("../../images/sprite.svg")+`${item.img}`)

@@ -67,3 +67,34 @@
         max-width: 100%;
     }
 }
+
+.social__link{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.social__img{
+    max-width: 100%;
+    fill: rgba(145,160,154, .8);
+    max-height: 100%;
+
+    &:hover{
+        fill: $green;
+    }
+}
+
+.social__list{
+    display: flex;
+}
+.social__item + .social__item{
+    margin-left: 10px;
+}
+
+.welcome-btns__link{
+    color: white;
+    background-color: #618f55;
+    padding: 15px 32px;
+    border-radius: 4px;
+    display: block;
+}

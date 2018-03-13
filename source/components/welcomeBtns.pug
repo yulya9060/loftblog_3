@@ -1,0 +1,6 @@
+-var pages = [{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'блог'}]
+.welcome-btns
+    ul.welcome-btns__list
+        each item in pages
+            li.welcome-btns__item
+                a.welcome-btns__link(href=`../pages/${item.page}/${item.page}.pug`)=item.title
