@@ -5,11 +5,11 @@ block head
     title Добро пожаловать!
 
 block wrapper
-    .wrapper.wrapper-welcome
-        +header('header-welcome')
+    .wrapper.welcome
+        +header('welcome__header')
         block content
             include ../../components/welcomeContent
         block footer
-            +footer('footer-welcome')
+            +footer('footer__welcome')
 
     
