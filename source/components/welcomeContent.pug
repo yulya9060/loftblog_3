@@ -8,4 +8,21 @@ include ./_mixins
             h2.welcome-describe__title Салтрукович Юлия
             .welcome-describe__desc Личный сайт веб-разработчика
         +socialIcons('social', [{link:'http://vk.com',img: '#vk'},{link:'http://vk.com',img: '#github'},{link:'http://vk.com',img: '#in'}])
-        include ./welcomeBtns
+        +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}])
+    .welcome-auth.welcome-describe
+        h2.auth__title Авторизуйтесь
+            .auth__form
+                .form
+                    .form-row
+                        .login
+                            svg(class="login__img")
+                                use(xlink:href=require("../../images/sprite.svg")+"#login")
+                        label
+                            input(type="text", name="", placeholder="Логин")
+                    .form-row
+                        .password
+                            svg(class="password__img")
+                                use(xlink:href=require("../../images/sprite.svg")+"#password")
+                        label
+                            input(type="password", name="", , placeholder="Пароль")
+        +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}])

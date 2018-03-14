@@ -6,10 +6,11 @@ block head
 
 block wrapper
     .wrapper.welcome
-        +header('welcome__header')
+        include ../../components/welcomeHeader
         block content
             include ../../components/welcomeContent
         block footer
-            +footer('footer__welcome')
+            include ../../components/welcomeFooter
+            
 
     
