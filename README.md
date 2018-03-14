@@ -4,7 +4,7 @@
 
 **Наставник**: Рощин Максим
 
-ссылка:  https://yulya9060.github.io/loftblog_3/build/welcome.html
+ссылка:   https://yulya9060.github.io/loftblog_3/
 
 ## 1 неделя обучения
 
