@@ -19,15 +19,17 @@
     &__content{
         justify-content: center;
         margin-bottom: 40px;
+        align-items: center;
 }
 
     &-describe{
         background-color: rgba(0,0,0, .4);
-        width: 380px;
+        height: 100%;
         border-radius: 4px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
 
         &__img{
         max-width: 140px;
@@ -48,6 +50,7 @@
             align-items: center;
             flex-wrap: wrap;
             margin-bottom: 30px;
+            width: 100%;
         }
 
         &__title{
@@ -68,13 +71,20 @@
     }
 }
 
-.social__link{
+.social{
+    margin-bottom: 43px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px 0 10px;
+
+    &__link{
     display: inline-block;
     width: 32px;
     height: 32px;
-}
+    }
 
-.social__img{
+    &__img{
     max-width: 100%;
     fill: rgba(145,160,154, .8);
     max-height: 100%;
@@ -84,17 +94,46 @@
     }
 }
 
-.social__list{
+&__list{
     display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.social__item + .social__item{
+&__item + &__item{
     margin-left: 10px;
 }
+}
 
-.welcome-btns__link{
+.welcome-btns{
+    width: 100%;
+
+    &__list{
+        width: 100%;
+        display: flex;
+    
+    }
+ 
+    &__item:first-child > .welcome-btns__link{
+        border-radius: 0 0 0 4px;
+    } 
+    
+    &__item:last-child > .welcome-btns__link{
+        border-radius: 0 0 4px 0;
+    } 
+
+    &__item + &__item{
+        border-left: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+
+
+&__link{
     color: white;
     background-color: #618f55;
     padding: 15px 32px;
-    border-radius: 4px;
     display: block;
+
+}
+
 }
