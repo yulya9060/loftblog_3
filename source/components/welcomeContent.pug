@@ -7,22 +7,19 @@ include ./_mixins
         .welcome-describe__text
             h2.welcome-describe__title Салтрукович Юлия
             .welcome-describe__desc Личный сайт веб-разработчика
-        +socialIcons('social', [{link:'http://vk.com',img: '#vk'},{link:'http://vk.com',img: '#github'},{link:'http://vk.com',img: '#in'}])
+        +socialIcons('social', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}])
         +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}])
     .welcome-auth.welcome-describe
         h2.auth__title Авторизуйтесь
-            .auth__form
-                .form
+        .auth__form
+            .form
+                .form__wrapper
                     .form-row
                         .login
-                            svg(class="login__img")
-                                use(xlink:href=require("../../images/sprite.svg")+"#login")
-                        label
-                            input(type="text", name="", placeholder="Логин")
+                            label.form-row__label.form-row__label_login
+                                input(type="text", name="", placeholder="Логин" class="form__input")
                     .form-row
                         .password
-                            svg(class="password__img")
-                                use(xlink:href=require("../../images/sprite.svg")+"#password")
-                        label
-                            input(type="password", name="", , placeholder="Пароль")
-        +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}])
+                            label.form-row__label.form-row__label_password
+                                input(type="password", name="", , placeholder="Пароль"  class="form__input")
+        +welcomeNav([{page:'works',title:'На главную'},{page:'about',title:'Войти'}])

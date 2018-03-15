@@ -4,8 +4,9 @@ mixin socialIcons(className,items)
             each item in items
                 li(class=`${className}__item`)
                     a(class=`${className}__link` href=`${item.link}`)
-                        svg(class=`${className}__img`)
-                            use(xlink:href=require("../../images/sprite.svg")+`${item.img}`)
+                        +svgIcon(`${className}__img`,"../../images/sprite.svg",`${item.img}`)
+                        //- svg(class=`${className}__img`,"../../images/sprite.svg")
+                        //-     use(xlink:href=require("../../images/sprite.svg")+`${item.img}`)
 
 mixin welcomeNav(pages) 
     nav.welcome-btns
@@ -13,3 +14,7 @@ mixin welcomeNav(pages)
             each item in pages
                 li.welcome-btns__item
                     a.welcome-btns__link(href=`./${item.page}.html`)=item.title
+
+mixin svgIcon(className, path, symbol)
+    svg(class=`${className}`)
+        use(xlink:href=`${path}#${symbol}`)
