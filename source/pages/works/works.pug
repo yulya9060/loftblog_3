@@ -1,0 +1,42 @@
+extends ../base 
+include ../../components/_mixins
+
+block head
+    title Обо мне
+
+block wrapper
+    .wrapper.blog
+        h1.visuallyHidden= 'Мои работы'
+        include ../../components/headerWork
+        block content
+            section.content.work__content
+                .work-title
+                    +underlineText('мои работы','','works')
+                .work-around.slider
+                    .work-main
+                        .left.work-main__left
+                            .left__describe
+                                +underlineText('сайт школы онлайн-образования','','describe')
+                            .left-skills
+                                -var skills = ['html','css','javascript'];
+                                each skill in skills
+                                    span.left-skills_name= skill
+                            a.see__link(href="")= 'Посмотреть сайт'
+                    .work-main_right
+                        .slider-show
+                            .slider-show-img
+                                img(src=require("../../images/work-1.png"), alt="Слайдер" class='slider-show__img')
+                        .slider-btns
+                            .slider-prev
+                                .slider-prev-img
+                                    img(src=require("../../images/work-2.png"), alt="Слайдер" class='slider-prev__img')
+                                .slider-btns__down
+                                    button.btn-down
+                            .slider-next
+                                .slider-next-img
+                                    img(src=require("../../images/work-3.png"), alt="Слайдер" class='slider-next__img')
+                                .slider-btns__up
+                                    button.btn-up
+                .about-me
+                     +underlineText('что обо мне говорят','','about-me')
+
