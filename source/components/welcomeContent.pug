@@ -7,23 +7,25 @@ include ./_mixins
         .welcome-describe__text
             h2.welcome-describe__title Салтрукович Юлия
             .welcome-describe__desc Личный сайт веб-разработчика
-        +socialIcons('social', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}])
-        +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}])
+        +socialIcons('social_welcome', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}],1)
+        +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}],'welcome-btns',1)
     .welcome-auth.welcome-describe.visuallyHidden
-        h2.auth__title Авторизуйтесь
-        .auth__form
+        .auth-title
+            h2.title-underline= 'Авторизуйтесь'
+            .underline-auth
+        .auth-form
             .form
                 .form__wrapper
                     .form-row
                         span.form__input_login
                         span.input-back
-                            +svgIcon('form__img','../images/sprite.svg','login')
+                            +svgIcon('form__img','./images/sprite.svg','login')
                         label.form-row__label
                             input(type="text", name="", placeholder="Логин" class="form__input")
                     .form-row
                         span.form__input_login
                         span.input-back
-                            +svgIcon('form__img','../images/sprite.svg','password')
+                            +svgIcon('form__img','./images/sprite.svg','password')
                         label.form-row__label
                             input(type="password", name="", placeholder="Пароль" class="form__input")
                     .form-row   

@@ -12,3 +12,8 @@
   }
 }
   
+@mixin underline($width,$height,$color){
+  width: $width;
+  height: $height;
+  border: 1px solid $color;
+}

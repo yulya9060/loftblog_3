@@ -66,7 +66,8 @@ const common = merge([
   fonts(),
   pug(),
   lintJS({ paths: PATHS.sources }),
-]);
+  
+  ]);
    
 module.exports = function(env) {
   if (env === 'production') {

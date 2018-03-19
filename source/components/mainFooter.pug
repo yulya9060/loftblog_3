@@ -1,0 +1,12 @@
+include ./_mixins
+
+footer.footer.footer-main
+    ul.footer-main__list
+        li.footer-main__item
+            .footer-main-left= 'Этот сайт я сделал в рамках программы обучения в LoftSchool'
+        li.footer-main__item
+            +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}],'footer-btn',0)
+            +socialIcons('social-footer', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}],0)
+        li.footer-main__item
+            .footer-main-right= 'gdfgdfgfgfgdfgdg'
+    include ./footer

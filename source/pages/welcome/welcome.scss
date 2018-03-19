@@ -73,13 +73,13 @@
     }
 }
 
-.social{
-    margin-bottom: 43px;
+
+.social_welcome{
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 0 10px 0 10px;
-
+    margin-bottom: 43px;
     &__link{
     display: inline-block;
     width: 32px;
@@ -88,14 +88,12 @@
 
     &__img{
     max-width: 100%;
-    fill: rgba(145,160,154, .8);
     max-height: 100%;
-
+    fill: rgba(145,160,154, .8);
     &:hover{
         fill: $green;
     }
 }
-
 &__list{
     display: flex;
     width: 100%;
@@ -106,6 +104,9 @@
     margin-left: 15px;
 }
 }
+
+
+
 
 .welcome-btns{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -188,23 +189,11 @@
 }
 
 
-.auth__title{
-    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 35px;
-    position: relative;
+.auth-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 40px;
-    &:after{
-        content: "";
-        display: block;
-        width: 90px;
-        height: 1px;
-        border-bottom: 1px solid white;
-        margin-top: 20px;
-        left: 50px;
-        position: absolute;
-    }
 }
 
 .form{
@@ -359,3 +348,5 @@
 .check-label_margin-right{
     margin-right: 10px;
 }
+
+.underline-auth { @include underline(90px,2px,#ffffff) }

@@ -1,18 +1,46 @@
-mixin socialIcons(className,items)
-    div(class=`${className}`)
+mixin socialIcons(className,items,welcome)
+    if welcome==1
+        div(class=`${className}`)
+            ul(class=`${className}__list`)
+                each item in items
+                    li(class=`${className}__item`)
+                        a(class=`${className}__link` href=`${item.link}`)
+                            +svgIcon(`${className}__img`,'./images/sprite.svg',`${item.img}`)
+    else 
         ul(class=`${className}__list`)
             each item in items
                 li(class=`${className}__item`)
                     a(class=`${className}__link` href=`${item.link}`)
-                        +svgIcon(`${className}__img`,'../../images/sprite.svg',`${item.img}`)
+                        +svgIcon(`${className}__img`,'./images/sprite.svg',`${item.img}`)
 
-mixin welcomeNav(pages) 
-    nav.welcome-btns
-        ul.welcome-btns__list
+mixin welcomeNav(pages,className,welcome) 
+    if welcome==1
+        nav(class=`${className}`)
+            ul(class=`${className}__list`)
+                each item in pages
+                    li(class=`${className}__item`)
+                        a(class=`${className}__link` href=`./${item.page}.html`)=item.title
+    else
+        ul(class=`${className}__list`)
             each item in pages
-                li.welcome-btns__item
-                    a.welcome-btns__link(href=`./${item.page}.html`)=item.title
+                li(class=`${className}__item`)
+                    a(class=`${className}__link` href=`./${item.page}.html`)=item.title
 
 mixin svgIcon(className, path, symbol)
     svg(class=`${className}`)
-        use(xlink:href=`${path}`+`#${symbol}`) 
+        use(xlink:href=require('../../images/sprite.svg')+`#${symbol}`) 
+
+mixin img(className,path,alt)
+    img(src =`${path}`, class=`${className}`, alt=`${alt}`)
+
+
+mixin underlineText(title,text,className)
+    .underline-title
+        .underline-title__main-title
+            h2(class=`title-underline title-underline_${className}`)= `${title}`
+            div(class=`underline-${className}`)
+            if `${text}`.length>0
+                div(class= `underline-title__desc underline-title__${className}`)
+                    p= `${text}`
+
+
