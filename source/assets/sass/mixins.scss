@@ -1,13 +1,23 @@
+@mixin display1800 {
+  @media screen and (min-width: $display1800) {
+    @content;
+  }
+}
 
+@mixin display1200 {
+  @media screen and (min-width: $display1200) {
+    @content;
+  }
+}
 
 @mixin tablets {
-  @media screen and (max-width: $tablets) {
+  @media screen and (min-width: $tablets) {
     @content;
   }
 }
 
 @mixin phones {
-  @media screen and (max-width: $phones) {
+  @media screen and (min-width: $phones) {
     @content;
   }
 }

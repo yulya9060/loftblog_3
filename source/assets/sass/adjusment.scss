@@ -3,7 +3,6 @@
     width:100%;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     min-height: 650px;
 }
 
@@ -95,6 +94,18 @@
         font-style: normal;
         font-size: 35px;
         position: relative;
+        text-align: center;
+
+        &:after{
+            content:'';
+            position: absolute;
+            width: 90px;
+            border: 2px solid white;
+            left:50%;
+            bottom: 0;
+            transform: translateX(-50%);
+
+        }
     }
 
     .underline-title {

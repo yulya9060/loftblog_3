@@ -28,8 +28,8 @@ mixin welcomeNav(pages,className,welcome)
 
 mixin svgIcon(className, path, symbol)
     svg(class=`${className}`)
-        //- use(xlink:href=require('../../images/sprite.svg')+`#${symbol}`) 
-        use(xlink:href=`${path}#${symbol}`) 
+        use(xlink:href=require('../../images/sprite.svg')+`#${symbol}`) 
+        //- use(xlink:href=`${path}#${symbol}`) 
 
 mixin img(className,path,alt)
     img(src =`${path}`, class=`${className}`, alt=`${alt}`)
