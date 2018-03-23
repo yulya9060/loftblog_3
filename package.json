@@ -8,7 +8,7 @@
     "build": "webpack --env production",
     "test": "echo \"tetst\" && exit 1 ",
     "test:lint": "eslint . --cache",
-    "svgSprite": "svgo -f source/images/icons -o source/images/out --config=svgo.config --disable removeViewBox && svg-sprite-generate -d source/images/out -o source/images/sprite.svg"
+    "prestart": "svgo -f source/images/icons -o source/images/out --config=svgo.config --disable removeViewBox && svg-sprite-generate -d source/images/out -o source/images/sprite.svg"
   },
   "keywords": [],
   "author": "",
