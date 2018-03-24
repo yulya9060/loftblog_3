@@ -1,11 +1,11 @@
-@mixin display1800 {
-  @media screen and (min-width: $display1800) {
+@mixin desctop {
+  @media screen and (min-width: $desctop) {
     @content;
   }
 }
 
-@mixin display1200 {
-  @media screen and (min-width: $display1200) {
+@mixin laptop {
+  @media screen and (min-width: $laptop) {
     @content;
   }
 }

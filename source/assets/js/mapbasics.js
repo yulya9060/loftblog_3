@@ -1,4 +1,3 @@
-
 //карта 
 ymaps.ready(init);
 var myMap;
@@ -17,7 +16,7 @@ function init(){
     ],
     myCollection = new ymaps.GeoObjectCollection({}, {
       iconLayout: 'default#image',
-      iconImageHref: './images/icons/map-n.svg',
+      // iconImageHref: './images/icons/map-n.svg',
       iconImageSize: [46, 57],
       iconImageOffset: [-26, -52],
       draggable: false, // и их можно перемещать

@@ -85,7 +85,6 @@
     max-width: 90%;
     z-index: 200;
     justify-content: center;
-    
     &-image{
         width: 140px;
         height: 140px;
@@ -149,19 +148,7 @@
     padding: 0 60px;
     text-align: center;
 }
-.about-title {
-    min-width: 1250px;
-    min-height: 321px;
-    /* height: 100vh; */
-    background: url('../../images/icons/portfolio_header.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    z-index: 100;
-    opacity: 0.2;
-    margin: 0 30px;
-    left: 250px;
-}
+
 
 .arrow {
     width: 24px;
@@ -186,10 +173,11 @@
     content: "";
 }
 
-.section-footer {
+.section-poly {
     position: absolute;
-    top: 83%;
+    top: 84%;
     width: 100%;
+    bottom:0;
 }
 
 .triangle{
@@ -205,18 +193,10 @@
 
 }
 
-.title-underline_about{
-    color: #373e42;
-    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 63px;
-}
-
 
 .about__content {
     display: flex;
-    height: 100vh;
+    flex-direction: column;
     width: 100%;
     min-height: 650px;
 }
@@ -294,10 +274,6 @@
     align-items: center;
 
 }
-
-.underline-about-me { @include underline(90px,3px,#373e42) }
-.underline-who { @include underline(90px,3px,#566358) }
-.underline-utility { @include underline(90px,3px,#566358) }
 
 .who-am__desc{
     color: #566358;
@@ -386,17 +362,56 @@
 
 #map {
     width: 100%;
-    height: 90%;
-}
-
-.section{
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    min-width: 650px;
-    background-color: crimson;
+    height: 500px;
 }
 
 .map{
     position: relative;
 }
+
+.content-about{
+    width: 100%;
+    display: flex;
+}
+
+.title-underline_about{
+    font-size: 63px;
+    color: #373e42;
+    font-weight: normal;
+    font-style: normal;
+    padding-bottom: 28px;
+    margin-bottom: 70px;
+
+    &:after{
+        border: 2px solid #373e42;
+    }
+}
+
+.title-underline_who{
+    font-size: 35px;
+    color: #566358;
+    font-weight: normal;
+    font-style: normal;
+    padding-bottom: 28px;
+    margin-bottom: 70px;
+
+    &:after{
+        border: 2px solid #566358;
+    }
+}
+
+.title-underline_utility{
+    font-size: 35px;
+    color: #566358;
+    font-weight: normal;
+    font-style: normal;
+    padding-bottom: 28px;
+    margin-bottom: 70px;
+
+    &:after{
+        border: 2px solid #566358;
+    }
+}
+
+
+
