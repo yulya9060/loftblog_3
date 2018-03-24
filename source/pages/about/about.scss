@@ -175,9 +175,8 @@
 
 .section-poly {
     position: absolute;
-    top: 84%;
     width: 100%;
-    bottom:0;
+    bottom:100;
 }
 
 .triangle{
@@ -199,7 +198,15 @@
     flex-direction: column;
     width: 100%;
     min-height: 650px;
+    position: relative;
+    padding-bottom: 70px;
 }
+
+.about{
+    position: relative;
+    padding-bottom: 70px
+}
+
 
 .about-me {
     width: 100%;
@@ -362,11 +369,12 @@
 
 #map {
     width: 100%;
-    height: 500px;
+    height: 100%;
 }
 
 .map{
     position: relative;
+    height: 100vh;
 }
 
 .content-about{

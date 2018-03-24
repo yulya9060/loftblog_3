@@ -8,11 +8,11 @@ block wrapper
         include ../../components/header
         block content
             section.content.about__content
+                .section-poly
+                    svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="triangle")
+                        polygon(class = "left" points="0,0   0,86   500.8,86   500.8,75.5")
+                        polygon(class = "right" points="1000,0   1000,86   500,86   500,75.5")
                 section.content-about
-                    .section-poly
-                            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="triangle")
-                                polygon(class = "left" points="0,0   0,86   500.8,86   500.8,75.5")
-                                polygon(class = "right" points="1000,0   1000,86   500,86   500,75.5")
                     .content-me
                         .about-me
                             h2.title-underline.title-underline_about= 'Обо мне'
@@ -41,7 +41,9 @@ block wrapper
                                                         circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${skill.level}`)   
                                                     span.item__title= `${skill.title}`
                 section.content-about.map
-                    #map 
-                     script(src='https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU' type="text/javascript" defer)                //- include ../../components/mainFooter
-
+                    #map
+                script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCdiqpmw5rW0CewRcKKUTZCtx4ePiFkEBA&callback=initMap', async)
+        block footer
+            include ../../components/mainFooter
+                
     
