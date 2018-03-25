@@ -1,9 +1,15 @@
 include ./_mixins
 
-footer.footer.footer-main
-            .footer-main-left= 'Этот сайт я сделал в рамках программы обучения в LoftSchool'
-            .footer-main-center
-                +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'}],'footer-btn',0)
-                +socialIcons('social-footer', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}],0)
-            .footer-main-right= 'gdfgdfgfgfgdfgdg'
-            include ./footer
+footer.footer-main
+    .footer-full
+        .footer-main-col
+            p
+                | Этот сайт я сделал в рамках 
+                | программы обучения в LoftSchool
+        .footer-main-col
+            +welcomeNav([{page:'works',title:'Мои работы'},{page:'about',title:' Обо мне'},{page:'blog',title: 'Блог'},{page:'welcome',title:'Авторизация'}],'footer-btn',0)
+            +socialIcons('social-footer', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}],0)
+        .footer-main-col
+            blockquote.footer-blockquote= 'Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.'
+            cite.footer-cite='-Martin Golding'
+    +footer-main('footer-other')

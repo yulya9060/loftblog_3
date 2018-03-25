@@ -184,15 +184,7 @@
     
 
 }
-.footer__item:before{
-    content: "|";
-    margin: 0 5px 0 5px;
-}
 
-.footer__item:first-child:before{
-    content: "";
-    margin: 0;
-}
 
 
 .auth-title{
@@ -246,6 +238,11 @@
 .title-underline_auth{
     padding-bottom: 24px;
     margin-bottom: 27px;
+    font-weight: 300;
+    color: white;
+    &:after{
+        border: 2px solid white;
+    }
 }
 
 .login, .password

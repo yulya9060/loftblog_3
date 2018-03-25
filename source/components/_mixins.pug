@@ -45,3 +45,15 @@ mixin underlineText(title,text,className)
                     p= `${text}`
 
 
+mixin footer-main(className)
+    -var text = [" &#169; Салтрукович Юлия","создано с любовью в LoftSchool","2018"]
+    div(class=`${className}`)
+        .footer__title
+            each item in text
+                span.footer__item!=item
+
+mixin triangle(page)
+    .section-poly
+        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="triangle")
+            polygon(class = `${page}-left` points="0,0   0,86   500.8,86   500.8,75.5")
+            polygon(class = `${page}-right` points="1000,0   1000,86   500,86   500,75.5")
