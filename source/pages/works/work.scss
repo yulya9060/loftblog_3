@@ -33,11 +33,11 @@
 
 
 .section-header{
-    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     background-image: url('../../images/bkgs/forest.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     color: $white;
     font-weight: normal;
     font-style: normal;
@@ -218,7 +218,7 @@
 .blog-title{
     background-image: url('../../images/icons/works_header.svg');
 }
-.underline-works { @include underline(90px,3px,#373e42) }
+
 .title-underline_works{
     font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
     color: #373e42;
@@ -265,7 +265,6 @@
 }
 
 
-.underline-describe { @include underline(90px,3px,#566358) }
 .title-underline_describe{
     font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
     color: #566358;
@@ -459,7 +458,7 @@
 
 
 .works-title{
-    height: 10%;
+    height: 6%;
     width: 100%;
     z-index: 50;
     opacity: 0.1;
@@ -519,10 +518,267 @@
     height: 100%;
     fill: white;
 }
+.works-title-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    margin-bottom: 11px;
+    width: 350px;
+    flex-wrap: wrap;
+    position:relative;
+}
+.title-underline-about_works{
+    color: #373e42;
+    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 35px;
+    text-align: center;
+    z-index: 100;
+    margin-bottom: 35px;
+    z-index:2;
 
+
+    &:after{
+        background-color:#373e42;
+        border: 2px solid #373e42;
+    }
+}
 .works-title-main {
     height: 20%;
     margin-bottom: 32px;
     display: flex;
     align-items: center;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f5f0 url('../../images/bkgs/list1200.png') center bottom no-repeat;
+    width: 100%;
+    background-size: cover;
+    height: 120vh;
+    background-size: cover;
+    padding-top: 20px;
+}
+
+.works-title_about {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    width: 100%;
+    height: 75%;
+    display: block;
+    transform: translate(-50%,-50%);
+}
+
+.works-about-img{
+    width:100%;
+    height: 100%;
+    fill: rgba(147,196,46, .2);
+}
+
+.works-reviews {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.reviews-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img.review__img {
+    width: 100%;
+    
+}
+.review-text{
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+    color: #5d5a55;
+    font-size:16px;
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    position: relative;
+}
+
+.review-quote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+
+.review-quote__img{
+    width:100%;
+    height:100%;
+   fill: rgba(147,196,46, .2);
+}
+
+.review-author{
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+    color: #4e8839;
+    font-size:16px;
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+}
+.review-author-work{
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+    color: #373e42;
+    font-size:16px;
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.reviews-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 380px;
+    align-items: center;
+    margin: 10px 20px;
+}
+
+.works-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 390px;
+    min-height: 460px;
+}
+.form-blur, .works-form-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+.form-blur{
+    z-index: 99;
+    background-color: #eff1ec;
+    background-image: url('../../images/bkgs/list1200.png');
+    background-size: cover;
+    opacity: .6;
+    background-repeat: no-repeat;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    filter: blur(15px) url('../../images/sprite.svg#blur'); /* путь к svg */
+    overflow: hidden;
+}
+
+.form-btns{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    width: 100%;
+
+    &__list{
+        width: 100%;
+        display: flex;
+    
+    }
+ 
+    &__item{
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    &__item:first-child > .welcome-btns__link{
+        border-radius: 0 0 0 4px;
+    } 
+    
+    &__item:last-child > .welcome-btns__link{
+        border-radius: 0 0 4px 0;
+    } 
+
+    &__item + &__item{
+        border-left: 2px solid rgba(255, 255, 255, 0.7);
+    }
+}
+
+.works-form-wrapper{
+     z-index: 100;
+      text-align: center;
+       padding:0 20px;
+
+}
+
+.auth-form{
+    height:80%;
+}
+.auth-form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form-row {
+    padding: 15px 20px;
+}
+
+.auth-form__input{
+    background-color: white;
+    border-radius: 6px;
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.title-underline-form{
+    color: #373e42;
+    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 35px;
+    text-align: center;
+    z-index: 100;
+    margin-bottom: 35px;
+    z-index:2;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 20%;
+
+    &:after{
+        background-color:#373e42;
+        border: 2px solid #373e42;
+    }
+}
+
+.welcome-btns__link{
+    color: white;
+    background-color: #618f55;
+    padding: 15px 15px;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    &:hover{
+        background-color: #487e38;
+    }
 }
