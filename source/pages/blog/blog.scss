@@ -33,12 +33,12 @@
 
 
 .section-header{
-    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     background-image: url('../../images/bkgs/forest.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     min-width: 600px;
@@ -149,18 +149,6 @@
     padding: 0 60px;
     text-align: center;
 }
-.blog-text {
-    width: 350px;
-    height: 50%;
-    background: url('../../images/icons/blog_header.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    z-index: 100;
-    opacity: 0.2;
-    top: 50%;
-    left: 43%;
-}
 
 .arrow {
     width: 24px;
@@ -190,15 +178,14 @@
     top: 83%;
     width: 100%;
 }
-
 .triangle{
     display: block;
 
-    &>.left{
-        fill: #ebefe2;
+    &>.blog-left{
+        fill: white;
     }
 
-    &>.right{
+    &>.blog-right{
         fill: $white;
     }
 
@@ -220,6 +207,7 @@
     font-style: normal;
     font-size: 63px;
     text-align: center;
+    margin-bottom: 32px;
 }
 
 
@@ -244,14 +232,19 @@
 
 .blog__content {
     display: flex;
-    height: 100vh;
+    flex-direction: row;
     width: 100%;
     min-height: 650px;
+    position: relative;
 }
 
 .content-left {
-    max-width: 35%;
+     width: 35%;
     padding: 10px 12px;
+    height: 100%;
+    // flex: 2 0 auto;
+    top:0;
+    position: sticky;
 }
 
 .content-left__list {
@@ -276,7 +269,7 @@
     font-style: normal;
     font-size: 16px;
     justify-content: flex-end;
-    padding: 7px 20px;
+    padding: 7px 23px;
     text-align: right;
 
     &:hover{
@@ -289,8 +282,14 @@
 }
 
 .content-right {
-    padding: 10px 12px;
-    max-width: 67%;
+    padding: 0 12px 12px 12px;
+    width: 65%;
+    // flex: 3 1 auto;
+}
+
+.article+.article{
+padding: 35px 0 35px 0;
+border-top: 3px solid #e7e5e3;
 }
 
 .article{
@@ -298,8 +297,8 @@
     color: #566358;
     font-weight: normal;
     font-style: normal;
-    padding: 35px 0 35px 0;
-    border-bottom: 3px solid #e7e5e3;
+    padding: 0 0 35px 0;
+    // border-bottom: 3px solid #e7e5e3;
 }
 .article-title{
     font-size: 35px;
@@ -320,6 +319,21 @@
 .article-text{
     font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     color: #566358;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.about-title_blog{
+    height: 49%;
+    left: 50%;
+    top: 38%;
+    transform: translateX(-50%);
+}
+
+.blog-text{
+    color: $white;
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 16px;

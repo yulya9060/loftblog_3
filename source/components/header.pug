@@ -8,17 +8,13 @@ section.header.section-header
                 .hamburger-icon
                     input(class='visuallyHidden hamburger',type="checkbox",name='hamburger')
                     .hamburger-check
-                        +svgIcon('hamburger-menu__img','../images/sprite.svg','hamburger')
+                        +svgIcon('hamburger-menu__img','./images/sprite.svg','hamburger')
         .section-header-main
             include ./roundphoto
             .about-title
+                +svgIcon('about-title__img','./images/sprite.svg','portfolio_header')
             .arrow-content
                 a(href="").arrow
                     +svgIcon('arrow__img','./images/sprite.svg','arrow_down')
-    .section-footer
-        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="triangle")
-            polygon(class = "left" points="0,0   0,86   500.8,86   500.8,75.5")
-            polygon(class = "right" points="1000,0   1000,86   500,86   500,75.5")
-
 
     

@@ -65,7 +65,7 @@ const common = merge([
   images(),
   fonts(),
   pug(),
-  lintJS({ paths: PATHS.sources }),
+  // lintJS({ paths: PATHS.sources }),
   
   ]);
    

@@ -3,11 +3,12 @@
 @import './adjusment.scss';
 @import './hamburger.scss';
 @import './circleLevel.scss';
-@import './mainFooter.scss';
 
 html{
     font-size: 14px;
-  
+    @include desctop{
+        font-size:16px;
+      }
     @include tablets{
       font-size: 13px;
     }

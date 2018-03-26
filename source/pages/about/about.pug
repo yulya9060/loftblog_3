@@ -1,50 +1,59 @@
 extends ../base 
+include ../../components/_mixins
 
 block head
     title Обо мне
-    script(src='https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU' type="text/javascript", async defer)
-
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAr2X-7DJC2PFornakggZaUwjf6YHem0gQ&callback=initMap', async)
 block wrapper
-    .wrapper.about
+    .wrapper.about.other
         h1.visuallyHidden= 'Обо мне'
         include ../../components/header
         block content
-            section.content.about__content
-                .content-me
-                    .about-me
-                        .about-me__title-about
+            section.content.other-content
+                +triangle('about')
+                section.content-about
+                    .content-me
+                        .about-me
                             h2.title-underline.title-underline_about= 'Обо мне'
-                            .underline-about-me 
-                        .about-me-img
-                             img.about-me-img__photo(src=require("../../images/photo.jpg"), alt="Мое фото")
-                    .who-am
-                        .who-am__title-who
+                            .me-title
+                                 +svgIcon('me-title__img','./images/sprite.svg','about_header')
+                            .about-me-img
+                                img.about-me-img__photo(src=require("../../images/photo.jpg"), alt="Мое фото")
+                        .who-am
                             h2.title-underline.title-underline_who= 'Кто я'
-                            .underline-who
-                        .who-am__desc
-                            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga necessitatibus impedit iure fugit, itaque, vero cum debitis quod, corrupti repellat nostrum aliquid nulla ad modi quae minima facere exercitationem numquam possimus! Dolorem iure fugit eligendi, iste animi esse iusto repudiandae consequuntur voluptates numquam expedita aperiam eum nobis est sapiente molestias error consectetur consequatur. Placeat totam ab voluptatem, dicta ipsa minus quas, consequuntur alias optio voluptate iure cupiditate eos ad blanditiis nesciunt praesentium corporis vero aliquam id pariatur libero maiores vel. Voluptates voluptatem esse cumque ipsa. Explicabo qui perferendis dicta impedit quas, culpa sapiente excepturi odit delectus illo sit, consequatur itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum odit amet eius veritatis aspernatur quod ea sed eveniet nihil in.
-                .content-me.content-me_white
-                    .utility-desc
-                        .utility-desc__title
+                            .who-am__desc
+                                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga necessitatibus impedit iure fugit, itaque, vero cum debitis quod, corrupti repellat nostrum aliquid nulla ad modi quae minima facere exercitationem numquam possimus! Dolorem iure fugit eligendi, iste animi esse iusto repudiandae consequuntur voluptates numquam expedita aperiam eum nobis est sapiente molestias error consectetur consequatur. Placeat totam ab voluptatem, dicta ipsa minus quas, consequuntur alias optio voluptate iure cupiditate eos ad blanditiis nesciunt praesentium corporis vero aliquam id pariatur libero maiores vel. Voluptates voluptatem esse cumque ipsa. Explicabo qui perferendis dicta impedit quas, culpa sapiente excepturi odit delectus illo sit, consequatur itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum odit amet eius veritatis aspernatur quod ea sed eveniet nihil in.
+                                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga necessitatibus impedit iure fugit, itaque, vero cum debitis quod, corrupti repellat nostrum aliquid nulla ad modi quae minima facere exercitationem numquam possimus! Dolorem iure fugit eligendi, iste animi esse iusto repudiandae consequuntur voluptates numquam expedita aperiam eum nobis est sapiente molestias error consectetur consequatur. Placeat totam ab voluptatem, dicta ipsa minus quas, consequuntur alias optio voluptate iure cupiditate eos ad blanditiis nesciunt praesentium corporis vero aliquam id pariatur libero maiores vel. Voluptates voluptatem esse cumque ipsa. Explicabo qui perferendis dicta impedit quas, culpa sapiente excepturi odit delectus illo sit, consequatur itaque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum odit amet eius veritatis aspernatur quod ea sed eveniet nihil in.
+                    .content-me.content-me_white
+                        .utility-desc
                             h2.title-underline.title-underline_utility= 'Чем я могу быть вам полезна'
-                            .underline-utility 
-                        .utility-desc__text
-                            p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis magni nihil voluptates quisquam ipsa voluptatem! Quod aut rem sapiente odio odit unde mollitia consequatur facere eum quas minus aliquid, voluptatum sequi reiciendis quasi beatae accusantium impedit iste architecto obcaecati maxime a deserunt voluptatibus voluptas? Suscipit nobis voluptates non recusandae cum illum officiis, pariatur sit enim est. Sint laboriosam consequatur, corrupti, reprehenderit atque voluptatem nobis nemo recusandae nulla possimus facere excepturi eveniet voluptatum ad tempora saepe. Atque recusandae dicta possimus nobis libero magni sed placeat, nam earum id asperiores quos, veritatis aliquam et dolore. Quibusdam consequuntur libero atque fuga dolorem quasi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequuntur sapiente soluta ipsam, vel nostrum minus. Libero dolorem iusto consequuntur minima, maiores sit perferendis eaque dolor mollitia, vero eligendi ullam similique voluptate? Delectus nulla distinctio ipsa adipisci. Explicabo quis fugit suscipit debitis, modi, necessitatibus optio id, hic iure vero quae.
-                    -var skillsGroup = [{ category: 'Frontend', skills: [ {title : 'HTML5', level: 90}, {title: 'CSS3', level: 80}, {title: 'JavaScript&jQuery', level: 50}]}, { category: 'Backend', skills: [{ title: 'PHP', level: 15}, { title: 'MySql', level: 15},{ title: 'Mongo.db', level: 15}]}, { category: 'Workflow', skills: [{title: 'Git', level: 50}, {title: 'Gulp', level: 40}, {title: 'Bower', level: 35}]}]
-                    .utility-skills
-                        ul.skills-group-list
-                            each item in skillsGroup
-                                li.skills-group-item
-                                    span.skill-group-title=`${item.category}`
-                                    ul.skills-list
-                                        each skill in item.skills
-                                            li.skills-list__item
-                                                svg(class="circles" viewBox="0 0 110 110")
-                                                    circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
-                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${skill.level}`)   
-                                                span.item__title= `${skill.title}`
-            section.section.map
-                #map 
-                include ../../components/mainFooter
-
+                            .utility-desc__text
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis magni nihil voluptates quisquam ipsa voluptatem! Quod aut rem sapiente odio odit unde mollitia consequatur facere eum quas minus aliquid, voluptatum sequi reiciendis quasi beatae accusantium impedit iste architecto obcaecati maxime a deserunt voluptatibus voluptas? Suscipit nobis voluptates non recusandae cum illum officiis, pariatur sit enim est. Sint laboriosam consequatur, corrupti, reprehenderit atque voluptatem nobis nemo recusandae nulla possimus facere excepturi eveniet voluptatum ad tempora saepe. Atque recusandae dicta possimus nobis libero magni sed placeat, nam earum id asperiores quos, veritatis aliquam et dolore. Quibusdam consequuntur libero atque fuga dolorem quasi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequuntur sapiente soluta ipsam, vel nostrum minus. Libero dolorem iusto consequuntur minima, maiores sit perferendis eaque dolor mollitia, vero eligendi ullam similique voluptate? Delectus nulla distinctio ipsa adipisci. Explicabo quis fugit suscipit debitis, modi, necessitatibus optio id, hic iure vero quae.
+                        -var skillsGroup = [{ category: 'Frontend', skills: [ {title : 'HTML5', level: 90}, {title: 'CSS3', level: 80}, {title: 'JavaScript&jQuery', level: 50}]}, { category: 'Backend', skills: [{ title: 'PHP', level: 15}, { title: 'MySql', level: 15},{ title: 'Mongo.db', level: 15}]}, { category: 'Workflow', skills: [{title: 'Git', level: 50}, {title: 'Gulp', level: 40}, {title: 'Bower', level: 35}]}]
+                        .utility-skills
+                            ul.skills-group-list
+                                each item in skillsGroup
+                                    li.skills-group-item
+                                        span.skill-group-title=`${item.category}`
+                                        ul.skills-list
+                                            each skill in item.skills
+                                                li.skills-list__item
+                                                    svg(class="circles" viewBox="0 0 110 110")
+                                                        circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
+                                                        circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${skill.level}`)   
+                                                    span.item__title= `${skill.title}`
+                section.content-about.map
+                    #map
+                    .contacts
+                        -var contacts = [{img:'skype',text:'yulya_9060'},{img:'telegram_logo',text:'yulya_9060@mail.ru'},{img:'phone',text:'+7(903)865-50-87'},{img:'map_marker',text:'Липецк, пр.Победы,47-14'}]
+                        h2.title-underline.title-underline_contacts= 'Контакты'
+                        ul.contacts__list
+                            each item in contacts
+                                li.contacts__item
+                                    .contacts__img
+                                        +svgIcon('contacts__svg','./images/sprite.svg',`${item.img}`)
+                                    span.contacts__text= `${item.text}`
+        block footer
+            include ../../components/mainFooter
+                
     
