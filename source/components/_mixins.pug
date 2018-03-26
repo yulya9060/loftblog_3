@@ -20,6 +20,11 @@ mixin welcomeNav(pages,className,welcome)
                 each item in pages
                     li(class=`${className}__item`)
                         a(class=`${className}__link` href=`./${item.page}.html`)=item.title
+    else if (welcome==2)
+        ul(class=`${className}__list`)
+                each item in pages
+                    li(class=`${className}__item`)
+                        input(class=`${className}__link` id='btn' type='submit' value=item.title)
     else
         ul(class=`${className}__list`)
             each item in pages
