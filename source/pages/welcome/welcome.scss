@@ -20,10 +20,10 @@
         display: flex;
         justify-content: flex-end;
         margin-bottom: 20px;
+        height:10%;
 
         @include desctop{
             padding: 22px 92px 20px 20px;
-            margin-bottom: 170px;
         }
 }
     &__content{
@@ -159,6 +159,10 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+     font-weight: 400;
+    font-style: normal;
 
     &:hover{
         background-color: #487e38;
@@ -425,3 +429,4 @@ transform: rotateY(180deg);
 .welcome-flip.flip .flipper {
     transform: rotateY(180deg);
     }
+
