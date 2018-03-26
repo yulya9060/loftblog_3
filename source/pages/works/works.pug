@@ -15,7 +15,7 @@ block wrapper
                         h2.title-underline.title-underline_works= 'Мои работы'
                         .works-title
                             +svgIcon('works-title__img','./images/sprite.svg','works_header')
-                    .work-around.slider
+                    section.work-around.slider
                         .work-main-left
                             .left.work-main__left
                                 .left__describe
@@ -41,6 +41,53 @@ block wrapper
                                 .slider-btns__up
                                     a.btn-down
                                         +svgIcon('btn-arrow','./images/sprite.svg','arrow_down')
-                    .about-me
-                        +underlineText('что обо мне говорят','','about-me')
+                section.about-me
+                    .works-title-about
+                        h2.title-underline.title-underline-about_works= 'Что обо мне говорят'
+                        .works-title_about
+                            +svgIcon('works-about-img','./images/sprite.svg','about_header')
+                    .works-reviews
+                        .reviews-content
+                            .review-img
+                                img(src=require("../../images/photo.jpg"), alt="Фото" class='review__img')
+                            .review-text
+                                p= 'Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool!! Два месяца тоолько самых тяжелых испытаний и бессоных ночей!'
+                                .review-quote
+                                    +svgIcon('review-quote__img','./images/sprite.svg','check')
+                            .review-author
+                                p= 'Ковальчук Дмитрий'
+                            .review-author-work
+                                p= '-Основатель LoftSchool'
+                        .reviews-content
+                            .review-img
+                                img(src=require("../../images/photo.jpg"), alt="Фото" class='review__img')
+                            .review-text
+                                p= 'Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool!! Два месяца тоолько самых тяжелых испытаний и бессоных ночей!'
+                                .review-quote
+                                    +svgIcon('review-quote__img','./images/sprite.svg','check')
+                            .review-author
+                                p= 'Ковальчук Дмитрий'
+                            .review-author-work
+                                p= '-Основатель LoftSchool'
+                    .works-form
+                        .form-blur
+                        .works-form-wrapper
+                            h2.title-underline.title-underline-form= 'Связаться со мной'
+                            .auth-form
+                                form(method='GET' name='form-review')
+                                    .auth-form-wrapper
+                                        .auth-form-row
+                                            label.form-row__label
+                                                input(type="text", name="", placeholder="Имя" class="auth-form__input")
+                                        .auth-form-row
+                                            label.form-row__label
+                                                input(type="email", name="", placeholder="E-MAIL" class="auth-form__input")
+                                        .auth-form-row
+                                            textarea(class="auth-form__input" rows="10" cols="45" name="text" placeholder="Ваше сообщение")
+                                        .form-btns
+                                            input(class='welcome-btns__link' type='submit' value='Отправить')
+                                            input(class='welcome-btns__link' type='reset' value='Очистить')
+            block footer
+                include ../../components/mainFooter
+
 

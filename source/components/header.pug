@@ -4,11 +4,12 @@ section.header.section-header
     .header-container
         header.section-header-top
             +socialIcons('social_main', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}])
-            .hamburger-menu
-                .hamburger-icon
-                    input(class='visuallyHidden hamburger',type="checkbox",name='hamburger')
-                    .hamburger-check
-                        +svgIcon('hamburger-menu__img','./images/sprite.svg','hamburger')
+            //- .hamburger-menu
+            //-     .hamburger-icon
+            //-         input(class='visuallyHidden hamburger',type="checkbox",name='hamburger')
+            //-         .hamburger-check
+            //-             +svgIcon('hamburger-menu__img','./images/sprite.svg','hamburger')
+            .hamburger
         .section-header-main
             include ./roundphoto
             .about-title
