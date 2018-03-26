@@ -1,0 +1,7 @@
+.fixed
+    nav.fixed-nav
+        ul.fixed-nav__list
+            -var nav=['Авторизация','Мои работы','Блог','Обо мне']
+            each item in nav
+                li.fixed-nav__item
+                    a.fixed-nav__link= item

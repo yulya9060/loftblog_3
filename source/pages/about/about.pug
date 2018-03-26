@@ -1,11 +1,11 @@
 extends ../base 
-include ../../components/_mixins
 
 block head
     title Обо мне
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAr2X-7DJC2PFornakggZaUwjf6YHem0gQ&callback=initMap', async)
 block wrapper
     .wrapper.about.other
+        +fixedNav('Обо мне')
         h1.visuallyHidden= 'Обо мне'
         include ../../components/header
         block content

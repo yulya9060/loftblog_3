@@ -9,6 +9,16 @@
   <link href="./css/common.css" rel="stylesheet"><link href="./css/about.css" rel="stylesheet"></head>
   <body>
     <div class="wrapper about other">
+      <div class="fixed">
+        <nav class="fixed-nav">
+          <ul class="fixed-nav__list">
+            <li class="fixed-nav__item"><a class="fixed-nav__link" href="./welcome.html">Авторизация</a></li>
+            <li class="fixed-nav__item"><a class="fixed-nav__link" href="./works.html">Мои работы</a></li>
+            <li class="fixed-nav__item"><a class="fixed-nav__link" href="./blog.html">Блог</a></li>
+            <li class="fixed-nav__item fixed-nav_active"><a class="fixed-nav__link" href="./about.html">Обо мне</a></li>
+          </ul>
+        </nav>
+      </div>
       <h1 class="visuallyHidden">Обо мне</h1>
       <section class="header section-header">
         <div class="header-container">
@@ -27,7 +37,13 @@
                                 <use xlink:href="./images/sprite.svg#in"> </use>
                               </svg></a></li>
                   </ul>
-            <div class="hamburger"></div>
+<button class="hidden1" id="hamb">
+  <div class="hamburger hamburger--slider js-hamburger">
+    <div class="hamburger-box">
+      <div class="hamburger-inner">  </div>
+    </div>
+  </div>
+</button>
           </header>
           <div class="section-header-main">
 <div class="describe">
