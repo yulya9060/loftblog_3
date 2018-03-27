@@ -33,7 +33,7 @@
 
 
 .section-header{
-    background-image: url('../../images/bkgs/forest.png');
+    //background-image: url('../../images/bkgs/forest.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -323,8 +323,12 @@
 .left-skills{
     display: flex;
     justify-content: center;
-    margin-bottom: 55px;
+    margin-bottom: 20px;
 
+}
+
+.left__describe{
+    margin-bottom: 20px;
 }
 
 .left-skills_name {
