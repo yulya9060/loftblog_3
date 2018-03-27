@@ -1,0 +1,146 @@
+@import '../../assets/sass/base.scss';
+.section-header{
+    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+    background-image: url('../../images/bkgs/forest-s.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    font-weight: normal;
+    font-style: normal;
+    min-width: 600px;
+    flex-direction: column;
+    min-height: 650px;
+    height: 100vh;
+    position: relative;
+    @include tablets{
+         
+        background-color: #d2d2d2;
+       background-image: url('../../images/bkgs/forest-m.png');
+}
+
+   @include laptop{
+  
+       background-color: #d2d2d2;
+       background-image: url('../../images/bkgs/forest-l.png');
+}
+
+@include desctop{
+  
+        background-color: #d2d2d2;
+       background-image:url('../../images/bkgs/forest-xl.png');
+
+    }
+
+
+
+}
+
+.section-header-top {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+    flex: 0 0 auto;
+}
+
+.header-container{
+    padding: 20px 30px;
+    height: 90%;
+}
+.describe{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    max-width: 90%;
+    z-index: 200;
+    justify-content: center;
+    &-image{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        &__photo{
+       
+            max-width: 100%;
+     }
+
+    }
+
+        &-text{
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            color: #ffffff;
+            font-weight: normal;
+            font-style: normal;
+            display: block;
+            margin-bottom: 30px;
+            width: 100%;
+            padding: 0 60px;
+            text-align: center;
+        }
+
+        &-title{
+            font-weight: 500;
+            font-style: normal;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        &-desc{
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+        }
+}
+
+.section-header-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    position: relative;
+    flex: 1 0 auto;
+    flex-direction: column;
+    height: 80%;
+}
+
+.describe-text {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0 60px;
+    text-align: center;
+}
+
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    display: block;
+    &:hover > .arrow__img{
+        fill: $gray;
+    }
+}
+
+.arrow__img {
+    max-width: 100%;
+    max-height: 100%;
+    fill: #c3d5cb;
+}
+
+.arrow-content {
+    position: absolute;
+    top: 112%;
+    left: 49.4%;
+    display: block;
+    content: "";
+}

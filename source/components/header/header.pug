@@ -1,12 +1,12 @@
-include ./_mixins
+include ../_mixins
 
 section.header.section-header
     .header-container
         header.section-header-top
             +socialIcons('social_main', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}])
-            include ./hamburger/hamburger  
+            include ../hamburger/hamburger  
         .section-header-main
-            include ./roundphoto
+            include ../roundphoto
             .about-title
                 +svgIcon('about-title__img','./images/sprite.svg','portfolio_header')
             .arrow-content
