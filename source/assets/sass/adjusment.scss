@@ -7,6 +7,11 @@
 
     @include desctop{
         min-width: 1800px;
+         width:100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 650px;
+
         }
 }
 
@@ -141,11 +146,6 @@
         }
     }
 
-    .other-content{
-        position: relative;
-        padding-bottom: 180px;
-    }
-
     .footer-main{
         position: absolute;
         display: flex;
@@ -155,8 +155,8 @@
         flex-direction: row;
         background-color: rgba(#373e42, .7);
         content: '';
-        top: 94.8%;
-        margin-top: auto;
+        top: 100%;
+        margin-top:-180px;
     }
 
 
@@ -311,3 +311,7 @@
     position: relative;
 }
 
+.authhide{
+    visibility:hidden;
+    opacity: 0;
+}

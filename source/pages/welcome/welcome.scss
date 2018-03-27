@@ -2,28 +2,50 @@
 
 .welcome{
     font-family: 'Roboto',  Arial, Helvetica, sans-serif;
-    background-image: url('../../images/bkgs/forest.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: $white;
     font-weight: normal;
     font-style: normal;
     height: 100vh;
     
-    @include desctop{
-        background-image: url('../../images/bkgs/desctop.png');    
+    &-bg{
+            background-image: url('../../images/bkgs/forest-s.png');
+            background-color: #d2d2d2;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+    
+     @include tablets{
+         
+             background-color: #d2d2d2;
+            background-image: url('../../images/bkgs/forest-m.png');
     }
 
+        @include laptop{
+       
+            background-color: #d2d2d2;
+            background-image: url('../../images/bkgs/forest-l.png');
+    }
+
+ @include desctop{
+       
+             background-color: #d2d2d2;
+            background-image:url('../../images/bkgs/forest-xl.png');
+
+         }
+
+
+    }
     &__header{
         padding: 20px 55px 20px 20px;
         display: flex;
         justify-content: flex-end;
         margin-bottom: 20px;
-        height:10%;
 
         @include desctop{
             padding: 22px 92px 20px 20px;
+            display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
         }
 }
     &__content{

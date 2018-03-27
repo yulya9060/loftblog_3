@@ -6,16 +6,20 @@
 
 html{
     font-size: 14px;
-    @include desctop{
-        font-size:16px;
-      }
-    @include tablets{
-      font-size: 13px;
-    }
+    
   
     @include phones{
       font-size:12px;
     }
+
+      @include tablets{
+      font-size: 13px;
+    }
+  
+
+    @include desctop{
+        font-size:16px;
+      }
   }
   
   body, html {
@@ -23,8 +27,6 @@ html{
   }
   
   body {
-    margin: 0;
-    padding: 0;
     font-family: 'SansusWebissimo', Helvetica,Arial, sans-serif;
     line-height: 1.42;
     color: $gray;
@@ -125,7 +127,8 @@ input, textarea {
 button, input[type=reset], input[type=button], input[type=submit], input[type=checkbox], input[type=radio], select {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
+    cursor:pointer;
 }
 input[type=checkbox], input[type=radio] {
     width: 13px;
@@ -164,4 +167,9 @@ select[multiple] {
     margin: -1px;
     padding: 0;
     border: 0;
+  }
+
+  img{
+      max-width: 100%;
+      height: auto;
   }

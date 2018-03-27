@@ -33,7 +33,7 @@
 
 
 .section-header{
-    background-image: url('../../images/bkgs/forest.png');
+    //background-image: url('../../images/bkgs/forest.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -226,9 +226,6 @@
     align-items: center;
 
 }
-
-
-.underline_blog { @include underline(90px,3px,white) }
 
 .blog__content {
     display: flex;
