@@ -5,20 +5,7 @@
     color: $white;
     font-weight: normal;
     font-style: normal;
-         @include tablets{
-            height: 100vh;
-    }
-
-        @include laptop{
-             height: 100vh;
-    }
-
- @include desctop{
-       
     height: 100vh;
-
-         }
-
 
     &-bg{
             background-image: url('../../images/bkgs/forest-s.png');
