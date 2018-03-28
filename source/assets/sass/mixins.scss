@@ -21,3 +21,10 @@
     @content;
   }
 }
+
+
+@mixin phoneTab {
+   @media screen and (min-width: $phones) and (max-width: $tablets) {
+    @content;
+  }
+}

@@ -203,10 +203,25 @@
     .social-footer__item+.social-footer__item{
         margin-left: 26px;
     }
+.footer__title{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0 20px 0;
 
+    @include phones{
+        flex-direction:column;
+        align-items:center;
+    }
+}
     .footer__item:before{
         content: "|";
         margin: 0 5px 0 5px;
+
+         @include phones{
+        content: "";
+        margin: 0;
+    }
     }
     
     .footer__item:first-child:before{
@@ -249,6 +264,8 @@
         }
     
     }
+
+
 
     .footer-full{
         font-family: 'Roboto', Arial, Helvetica, sans-serif;
