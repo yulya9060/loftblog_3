@@ -8,9 +8,8 @@
     color: $white;
     font-weight: normal;
     font-style: normal;
-    min-width: 600px;
     flex-direction: column;
-    min-height: 650px;
+    min-height: 550px;
     height: 100vh;
     position: relative;
     @include tablets{
@@ -139,8 +138,8 @@
 
 .arrow-content {
     position: absolute;
-    top: 112%;
-    left: 49.4%;
+    top: 100%;
+    left: 50%;
     display: block;
     content: "";
 }
