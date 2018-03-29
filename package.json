@@ -6,14 +6,14 @@
   "scripts": {
     "start": "webpack-dev-server --env development",
     "build": "webpack --env production",
-    "test": "echo \"tetst\" && exit 1 ",
     "test:lint": "eslint . --cache",
-    "icons": "svgo -f source/images/ && svg-sprite-generate -d source/images/ -o source/images/sprite.svg"
+    "prestart": "svgo -f source/images/icons -o source/images/out --config=svgo.config --disable removeViewBox && svg-sprite-generate -d source/images/out -o source/images/sprite.svg"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
@@ -33,10 +33,13 @@
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
-    "svg-sprite-generator": "0.0.7",
-    "svgo": "^1.0.5",
+    "svg4everybody": "^2.1.9",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^1.0.5"
   }
 }

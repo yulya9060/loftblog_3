@@ -1,8 +1,15 @@
 extends ../base 
-include ../../components/wrapper
+include ../../components/_mixins
 
 block head
     title Добро пожаловать!
 
 block wrapper
-    +wrapper('welcome','welcome')
+    .wrapper.welcome
+        include ../../components/welcomeHeader
+        block content
+            include ../../components/welcomeContent
+        block footer
+            include ../../components/welcomeFooter
+
+    

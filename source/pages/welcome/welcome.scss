@@ -1,26 +1,427 @@
 @import '../../assets/sass/base.scss';
 
-.wrapper-welcome{
+.welcome{
     font-family: 'Roboto',  Arial, Helvetica, sans-serif;
     background-image: url('../../images/bkgs/forest.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
+    font-weight: normal;
+    font-style: normal;
+    height: 100vh;
+    
+    @include desctop{
+        background-image: url('../../images/bkgs/desctop.png');    
+    }
+
+    &__header{
+        padding: 20px 55px 20px 20px;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+
+        @include desctop{
+            padding: 22px 92px 20px 20px;
+            margin-bottom: 170px;
+        }
+}
+    &__content{
+        justify-content: center;
+        margin-bottom: 40px;
+        align-items: center;
+        flex-direction: column;
 }
 
-.header-welcome{
-    padding: 24px 50px 178px 24px;
+    &-describe{
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 40px 20px 36px 20px;
+        width: 100%;
+
+        &__img{
+        max-width: 140px;
+        max-height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 15px;
+        }
+
+        &__text{
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            color: #ffffff;
+            font-weight: normal;
+            font-style: normal;
+            display: flex;
+            width: 100%;
+            padding: 0 45px;
+            text-align: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        &__title{
+            font-weight: 500;
+            font-style: normal;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        &__desc{
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+        }
+    }
+    &__photo{
+        max-width: 100%;
+    }
+}
+
+
+.social_welcome{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px 0 10px;
+
+    &__link{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    }
+
+    &__img{
+    max-width: 100%;
+    max-height: 100%;
+    fill: rgba(145,160,154, .8);
+    &:hover{
+        fill: $green;
+    }
+}
+&__list{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+&__item + &__item{
+    margin-left: 15px;
+}
 }
 
-.welcome-authorization{
-    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
+
+
+
+.welcome-btns{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 16px;
     font-weight: 500;
     font-style: normal;
-    color: $white;
-    font-size: 16px;
-    border: 1px solid $white;
-    border-radius: 2px;
+    width: 100%;
+    margin-top: auto;
+
+    &__list{
+        width: 100%;
+        display: flex;
+    
+    }
+ 
+    &__item{
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    &__item:first-child > .welcome-btns__link{
+        border-radius: 0 0 0 4px;
+    } 
+    
+    &__item:last-child > .welcome-btns__link{
+        border-radius: 0 0 4px 0;
+    } 
+
+    &__item + &__item{
+        border-left: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+
+
+&__link{
+    color: white;
+    background-color: #618f55;
+    padding: 15px 15px;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    &:hover{
+        background-color: #487e38;
+    }
 }
+
+}
+
+.welcome__footer{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.footer__title{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0 20px 0;
+
+    
+
+}
+
+
+
+.auth-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.form{
+    &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    &-row {
+        display: flex;
+        flex-grow: 1;
+        margin: 0 10px;
+        position: relative;
+        max-width: 100%;
+        margin-bottom: 19px;
+
+        &__title{
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 16px;
+        }
+    }
+
+    
+
+    &__input{
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 16px;
+        color: $gray;
+        padding: 8px 10px 8px 40px;
+        outline: none;
+        border-radius: 25px;
+        border: 0;
+        width: 300px;
+        height: 24px;
+        background-color: #ffffff;
+}
+}
+
+.title-underline_auth{
+    padding-bottom: 24px;
+    margin-bottom: 27px;
+    font-weight: 300;
+    color: white;
+    &:after{
+        border: 2px solid white;
+    }
+}
+
+.login, .password
+{
+    position: relative;
+}
+
+.input-back{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 200;
+    left: 12px;
+    top: 9px;
+    fill: #c4cbcd;
+}
+
+.form-row__label{
+    position: relative;
+}
+.form__input_login {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    width: 36px;
+    height: 40px;
+    border-radius: 25px 0 0 25px;
+    z-index: 100;
+    top: 0px;
+    left: -1px;
+    background-color: #f0efe9;
+}
+
+.form__img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.robot{
+
+    &:checked {
+        + .form__checkbox-fake:before{
+            content: "";
+            position: absolute;
+            display: block;
+            background: #8cc34b;
+            top: 0px;
+            left: 0px;
+            width: 18px;
+            height: 18px;
+            border-radius: 10%;
+        }
+}
+}
+.form__checkbox-fake{
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 10%;
+    margin-right: 15px;
+
+    &:after{
+        content: "";
+    display: block;
+    position: absolute;
+    left: 6px;
+    top: 1px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+}
+.form__checkbox-fake-title{
+    font-family: 'Robot', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.check-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.radio-fake:checked + .form__radio-fake:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #8cc34b;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+}
+
+.form__radio-fake {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 10px;
+
+    &-title{
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+    }
+}
+
+.form-column {
+    display: flex;
+    margin: 0 10px;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 19px;
+}
+
+.check-label_margin-right{
+    margin-right: 10px;
+}
+
+.welcome-front, .welcome-back{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+/* весь контейнер поддерживает перспективу */
+.welcome-flip {
+perspective: 1000;
+max-width: 85%;
+min-height: 396px;
+min-width: 380px;
+}
+// /* переверните сторону при проведении мышью */
+// .flip-container:hover .flipper, .flip-container.hover .flipper {
+// transform: rotateY(180deg);
+// }
+
+
+/* здесь находится скорость перевертывания */
+.flipper {
+transition: 0.6s;
+transform-style: preserve-3d;
+position: relative;
+}
+
+/* скройте обратную сторону во время переворота */
+.welcome-front, .welcome-back {
+backface-visibility: hidden;
+position: absolute;
+content: "";
+top: 0;
+left: 0;
+width: 100%;
+}
+ 
+/* лицевая сторона размещена над обратной */
+.welcome-front {
+z-index: 2;
+}
+/* обратная, изначально скрытая сторона */
+
+.welcome-back{
+transform: rotateY(180deg);
+}
+
+.welcome-flip.flip .flipper {
+    transform: rotateY(180deg);
+    }

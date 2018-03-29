@@ -1,8 +1,46 @@
 extends ../base 
-include ../../components/wrapper
 
 block head
-    title Добро пожаловать!
+    title Обо мне
 
 block wrapper
-    +wrapper('works','works')
+    .wrapper.works.other
+        h1.visuallyHidden= 'Мои работы'
+        include ../../components/header
+        block content
+            section.content.other-content
+                +triangle('works')
+                section.content-works
+                    .works-title-main
+                        h2.title-underline.title-underline_works= 'Мои работы'
+                        .works-title
+                            +svgIcon('works-title__img','./images/sprite.svg','works_header')
+                    .work-around.slider
+                        .work-main-left
+                            .left.work-main__left
+                                .left__describe
+                                    h2.title-underline.title-underline_site= 'Сайт школы онлайн-образования'
+                                .left-skills
+                                    -var skills = ['html','css','javascript'];
+                                    each skill in skills
+                                        span.left-skills_name= skill
+                                a.see__link(href="")= 'Посмотреть сайт'
+                        .work-main_right
+                            .slider-show-img
+                                img(src=require("../../images/work-1.png"), alt="Слайдер" class='slider-show__img')
+                        .slider-btns
+                            .slider-prev
+                                .slider-prev-img
+                                    img(src=require("../../images/work-2.png"), alt="Слайдер" class='slider-prev__img')
+                                .slider-btns__up
+                                    a.btn-down
+                                        +svgIcon('btn-arrow','./images/sprite.svg','arrow_down')
+                            .slider-next
+                                .slider-next-img
+                                    img(src=require("../../images/work-3.png"), alt="Слайдер" class='slider-next__img')
+                                .slider-btns__up
+                                    a.btn-down
+                                        +svgIcon('btn-arrow','./images/sprite.svg','arrow_down')
+                    .about-me
+                        +underlineText('что обо мне говорят','','about-me')
+

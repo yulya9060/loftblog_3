@@ -18,7 +18,7 @@ module.exports = function(paths) {
           include: paths,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: 'css-loader',
+            use: 'css-loader!autoprefixer-loader?browsers=last 2 versions',
           }),
         },
       ],
@@ -28,3 +28,5 @@ module.exports = function(paths) {
     ],
   };
 };
+
+console.log('настройка css');

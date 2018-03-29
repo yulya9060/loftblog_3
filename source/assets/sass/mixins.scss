@@ -1,14 +1,29 @@
+@mixin desctop {
+  @media screen and (min-width: $desctop) {
+    @content;
+  }
+}
 
+@mixin laptop {
+  @media screen and (min-width: $laptop) {
+    @content;
+  }
+}
 
 @mixin tablets {
-  @media screen and (max-width: $tablets) {
+  @media screen and (min-width: $tablets) {
     @content;
   }
 }
 
 @mixin phones {
-  @media screen and (max-width: $phones) {
+  @media screen and (min-width: $phones) {
     @content;
   }
 }
   
+@mixin underline($width,$height,$color){
+  width: $width;
+  height: $height;
+  border: 1px solid $color;
+}
