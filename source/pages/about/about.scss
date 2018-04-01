@@ -26,14 +26,20 @@
 }
 
 .content-me {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
     background-color: #ebefe2;
-    padding: 10px 60px;
+    padding: 0;
     position: relative;
+
+    @include laptop{
+        width: 50%;
+        padding: 10px 60px;
+        padding: 10px;
+    }
 }
 
 
@@ -51,9 +57,15 @@
 
 
 .about-me-img {
-    min-width: 400px;
-    height: 387px;
+
+    max-width: 320px;
+    max-height: 283px;
     text-align: center;
+
+    @include tablets{
+        max-width: 470px;
+        max-height: 416px;
+    }
 }
 
 .about-me-img__photo {
@@ -66,6 +78,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
 
 }
 
@@ -80,7 +93,12 @@
 
 
 .content-me_white {
-    background-color: white;
+    background-color: #ebefe2;
+    padding: 10px;
+
+    @include tablets{
+        background-color: white;
+    }
 }
 
 
@@ -115,9 +133,13 @@
     font-style: normal;
     color: #566358;
     font-size: 28px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
     display: block;
+
+    @include tablets{
+        text-align: left;
+    }
 }
 
 .utility-skills {
@@ -135,11 +157,16 @@
 .skills-list {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 
-    &__item + &__item{
-        margin-left: 37px;
+   
+
+    @include tablets{
+        justify-content: flex-start;
+        &__item + &__item{
+            margin-left: 37px;
+        }
     }
 }
 
@@ -149,17 +176,21 @@
 
 #map {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .map{
     position: relative;
-    height: 100vh;
 }
 
 .content-about{
     width: 100%;
     display: flex;
+    flex-direction: column;
+
+    @include laptop{
+        flex-direction: row;
+    }
 }
 
 .title-underline_about{
@@ -210,6 +241,13 @@
     transform: translateX(-3%);
     position: absolute;
 
+    @include tablets{
+        height: 10%;
+        width: 45%;
+        left: 50%;
+        bottom: 87%;
+        transform: translateX(-50%);
+    }
     @include desctop{
         height: 26%;
         left: -73px;
@@ -239,17 +277,22 @@
 }
 
 .contacts{
-    background-color: rgba(255,255,255, .5);
+    background-color: rgba(252,252,252, .85);
        align-items: center;
         border-radius:2px;
         display: flex;
         content: "";
         position: absolute;
-        top: 22%;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: column;
         padding-bottom: 15px;
+        width: 100%;
+        top: 0;
+
+        @include tablets{
+            top: 22%;
+        }
 }
 
 .contacts__list{
@@ -303,7 +346,11 @@
     }
 
     &>.about-right{
-        fill: $white;
+        fill: #ebefe2;
+
+        @include laptop{
+            fill: $white;
+        }
     }
 
 }

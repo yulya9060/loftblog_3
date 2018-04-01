@@ -42,7 +42,7 @@ block wrapper
                                                         circle(r="45" cx="50%" cy="50%" fill="none" class="circle__first")
                                                         circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class=`circle__second circle-${skill.level}`)   
                                                     span.item__title= `${skill.title}`
-                section.content-about.map
+                section.content-about.map.section-position-footer
                     #map
                     .contacts
                         -var contacts = [{img:'skype',text:'yulya_9060'},{img:'telegram_logo',text:'yulya_9060@mail.ru'},{img:'phone',text:'+7(903)865-50-87'},{img:'map_marker',text:'Липецк, пр.Победы,47-14'}]
@@ -53,7 +53,7 @@ block wrapper
                                     .contacts__img
                                         +svgIcon('contacts__svg','./images/sprite.svg',`${item.img}`)
                                     span.contacts__text= `${item.text}`
-        block footer
-            include ../../components/mainFooter
+                    block footer
+                        include ../../components/footer/mainFooter
                 
     

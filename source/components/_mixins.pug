@@ -39,14 +39,6 @@ mixin svgIcon(className, path, symbol)
 mixin img(className,path,alt)
     img(src =`${path}`, class=`${className}`, alt=`${alt}`)
 
-
-mixin footer-main(className)
-    -var text = [" &#169; Салтрукович Юлия","создано с любовью в LoftSchool","2018"]
-    div(class=`${className}`)
-        .footer__title
-            each item in text
-                span.footer__item!=item
-
 mixin triangle(page)
     .section-poly
         svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="triangle")

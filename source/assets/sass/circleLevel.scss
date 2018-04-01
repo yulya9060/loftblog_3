@@ -15,8 +15,14 @@
   .skills-list__item {
     position: relative;
     display: inline-block;
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
+    margin: 15px;
+
+    @include tablets{
+      width: 150px;
+      height: 150px;
+    }
   }
   
   .item__title {
@@ -25,11 +31,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 18px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     color: #74a163;
     font-weight: bold;
     word-break: break-all;
+
+    @include tablets{
+      font-size: 18px;
+    }
   }
   .circles .circle-0 {
      stroke-dasharray: .001 282.6;
