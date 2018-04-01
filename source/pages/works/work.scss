@@ -415,12 +415,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f4f5f0 url('../../images/bkgs/list1200.png') center bottom no-repeat;
+    background-color: #f4f5f0;
+    background-image: url('../../images/bkgs/list1200.png');
     width: 100%;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
     background-size: cover;
     padding-top: 20px;
-    padding-bottom:180px;
+    padding-bottom: 40px;
 }
 
 .works-title_about {
@@ -517,32 +519,9 @@ img.review__img {
     position: relative;
     display: flex;
     justify-content: center;
-    min-width: 390px;
-    min-height: 460px;
-}
-.form-blur, .works-form-wrapper{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+    flex-direction: column;
 }
 
-
-.form-blur{
-    z-index: 99;
-    background-color: #eff1ec;
-    background-image: url('../../images/bkgs/list1200.png');
-    background-size: cover;
-    opacity: .6;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    filter: blur(15px) url('../../images/sprite.svg#blur'); /* путь к svg */
-    overflow: hidden;
-}
 
 .form-btns{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -585,9 +564,6 @@ img.review__img {
 
 }
 
-.auth-form{
-    height:80%;
-}
 .auth-form-wrapper {
     display: flex;
     flex-direction: column;
@@ -618,7 +594,7 @@ img.review__img {
     justify-content: center;
     flex-wrap: wrap;
     height: 20%;
-
+    margin-bottom: 15px;
     &:after{
         background-color:#373e42;
         border: 2px solid #373e42;
