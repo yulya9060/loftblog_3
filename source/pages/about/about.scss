@@ -58,13 +58,14 @@
 
 .about-me-img {
 
-    max-width: 320px;
-    max-height: 283px;
+    width: 320px;
+    height: 283px;
     text-align: center;
 
     @include tablets{
-        max-width: 470px;
-        max-height: 416px;
+        width: 437px;
+        height: 400px;
+        text-align: center;
     }
 }
 
@@ -97,7 +98,11 @@
     padding: 10px;
 
     @include tablets{
-        background-color: white;
+        background-color:  #f4f5f0;
+    }
+
+    @include laptop{
+        background-color: $white;
     }
 }
 
@@ -109,6 +114,12 @@
     font-style: normal;
     font-size: 16px;
     text-align: left;
+
+    @include tablets{
+        text-align: justify;
+    padding-left: 140px;
+    padding-right: 140px;
+    }
 }
 .utility-desc {
     display: flex;
@@ -138,6 +149,10 @@
     display: block;
 
     @include tablets{
+        text-align: center;
+    }
+    
+    @include laptop{
         text-align: left;
     }
 }
@@ -163,11 +178,18 @@
    
 
     @include tablets{
-        justify-content: flex-start;
+        justify-content: center;
         &__item + &__item{
             margin-left: 37px;
         }
+
+        @include laptop{
+            justify-content: flex-start;
+            &__item + &__item{
+                margin-left: 37px;
+            }
     }
+}
 }
 
 .skills-group-item {
@@ -244,8 +266,9 @@
     @include tablets{
         height: 10%;
         width: 45%;
-        left: 50%;
-        bottom: 87%;
+        left:50%;
+        bottom: 0;
+        top: 0;
         transform: translateX(-50%);
     }
     @include desctop{
@@ -291,7 +314,9 @@
         top: 0;
 
         @include tablets{
-            top: 22%;
+            top: 18%;
+            width: auto;
+            padding-bottom: 0;
         }
 }
 
@@ -331,6 +356,12 @@
 
 .who-am__desc > p{
     margin-bottom: 10px;
+
+    @include tablets{
+        text-align: justify;
+        padding-left: 140px;
+        padding-right: 140px;
+    }
 
     &:last-of-type{
         margin-bottom: 0;

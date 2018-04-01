@@ -208,4 +208,11 @@ width: 100%;
 .section-position-footer{
     position: relative;
     padding-bottom: 346px;
+
+    @include tablets{
+        padding-bottom: 273px;
+    }
+    @include laptop{
+        padding-bottom: 180px;
+    }
 }

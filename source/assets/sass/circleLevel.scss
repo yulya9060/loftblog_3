@@ -20,6 +20,11 @@
     margin: 15px;
 
     @include tablets{
+      width: 110px;
+      height: 110px;
+    }
+
+    @include laptop{
       width: 150px;
       height: 150px;
     }
@@ -38,6 +43,10 @@
     word-break: break-all;
 
     @include tablets{
+      font-size: 13px;
+    }
+
+    @include laptop{
       font-size: 18px;
     }
   }
