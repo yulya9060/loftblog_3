@@ -44,6 +44,8 @@ block wrapper
                                                     span.item__title= `${skill.title}`
                 section.content-about.map.section-position-footer
                     #map
+                    block footer
+                        include ../../components/footer/mainFooter
                     .contacts
                         -var contacts = [{img:'skype',text:'yulya_9060'},{img:'telegram_logo',text:'yulya_9060@mail.ru'},{img:'phone',text:'+7(903)865-50-87'},{img:'map_marker',text:'Липецк, пр.Победы,47-14'}]
                         h2.title-underline.title-underline_contacts= 'Контакты'
@@ -53,7 +55,5 @@ block wrapper
                                     .contacts__img
                                         +svgIcon('contacts__svg','./images/sprite.svg',`${item.img}`)
                                     span.contacts__text= `${item.text}`
-                    block footer
-                        include ../../components/footer/mainFooter
                 
     
