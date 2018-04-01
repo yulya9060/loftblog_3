@@ -1,4 +1,4 @@
-@import '../../assets/sass/base.scss';
+@import '../../assets/sass/mixins.scss';
 
 .social_main {
     display: flex;
@@ -102,7 +102,6 @@
 
     @include laptop{
         height: 100vh;
-        flex-direction: row;
     }
 }
 
@@ -118,7 +117,7 @@
     @include laptop{
         width: 50%;
         height: 100%;
-       
+        order:1;
     }
 }
 
@@ -219,6 +218,7 @@
     @include laptop{
         width: 50%;
         height: 60%;
+        order:2;
 
     }
 }
@@ -560,15 +560,17 @@ img.review__img {
     &:before{
         position: absolute;
         content: "";
-        filter: blur(15px);
+        filter: blur(20px);
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         z-index: -1;
         background-size: contain;
-        background-position: center center;
-        margin: -20px;
+        background-position: 0px center;
+        background-repeat: initial;
+        background-attachment: fixed;
+        margin: -10px;
         background-image: url('../../images/bkgs/list1200.png');
     }
 }
@@ -629,6 +631,7 @@ img.review__img {
     border-radius: 23px;
     width: 100%;
     padding: 15px 20px;
+    resize: none;
 }
 
 .title-underline-form{

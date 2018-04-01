@@ -1,2 +1,2 @@
-import './about.scss';
 import '../../assets/js/base.js';
+import './about.scss';
