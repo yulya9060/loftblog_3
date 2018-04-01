@@ -11,8 +11,6 @@
     z-index:500;
 }
 
-
-
 .fixed-nav {
     position: absolute;
     display: flex;
@@ -55,11 +53,11 @@
     color: white;
     font-weight: normal;
     font-style: normal;
-    font-size: 64px;
+    font-size: 38px;
     text-transform: uppercase;
 
     &:hover{
-         font-size: 75px;
+         font-size: 42px;
     }
 
     &:active{
@@ -68,5 +66,9 @@
 }
 
 .fixed-nav__item+.fixed-nav__item{
-    margin-top:48px;
+    margin-top:25px;
+}
+
+.body_overflow{
+    overflow: hidden;
 }

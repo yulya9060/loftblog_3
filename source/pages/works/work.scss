@@ -1,6 +1,5 @@
 @import '../../assets/sass/base.scss';
 
-
 .social_main {
     display: flex;
     justify-content: center;
@@ -99,18 +98,28 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    height: 100vh;
     flex-direction: column;
+
+    @include laptop{
+        height: 100vh;
+        flex-direction: row;
+    }
 }
 
 .work-main-left {
     background-color: #ebefe2;
-    width: 50%;
-    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
     padding: 10px 15px;
+    order:2;
+
+    @include laptop{
+        width: 50%;
+        height: 100%;
+       
+    }
 }
 
 .work-main__left {
@@ -200,19 +209,30 @@
 
 .work-main_right{
     background-color: #e1e4d7;
-    width: 50%;
-    height: 60%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
+    order:1;
+
+    @include laptop{
+        width: 50%;
+        height: 60%;
+
+    }
 }
 
 
 .slider-btns {
     display: flex;
-    width: 50%;
-    height: 40%;
+    width: 100%;
+    order: 3;
+    @include laptop{
+        width: 50%;
+        height: 40%;
+       
+    }
 }
 
 
@@ -422,7 +442,16 @@
     background-position: center bottom;
     background-size: cover;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 346px;
+    position: relative;
+
+    @include tablets{
+        padding-bottom: 273px;
+    }
+
+    @include laptop{
+        padding-bottom: 180px;
+    }
 }
 
 .works-title_about {
@@ -445,12 +474,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.reviews-content {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+
+    @include tablets{
+        flex-direction: row;
+    }
 }
 
 .review-img {
@@ -510,9 +538,13 @@ img.review__img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-basis: 380px;
+    flex-basis: 194px;
     align-items: center;
     margin: 10px 20px;
+
+    @include tablets{
+        flex-basis: 380px;
+    }
 }
 
 .works-form {
@@ -520,6 +552,25 @@ img.review__img {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin: 20px;
+    max-width: 80%;
+    border-radius: 5px;
+    z-index: 1;
+
+    &:before{
+        position: absolute;
+        content: "";
+        filter: blur(15px);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-size: contain;
+        background-position: center center;
+        margin: -20px;
+        background-image: url('../../images/bkgs/list1200.png');
+    }
 }
 
 
@@ -575,7 +626,7 @@ img.review__img {
 
 .auth-form__input{
     background-color: white;
-    border-radius: 6px;
+    border-radius: 23px;
     width: 100%;
     padding: 15px 20px;
 }

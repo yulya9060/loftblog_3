@@ -1,4 +1,4 @@
-include ./_mixins
+include ../_mixins
 
 footer.footer-main
     .footer-full
@@ -12,4 +12,5 @@ footer.footer-main
         .footer-main-col
             blockquote.footer-blockquote= 'Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.'
             cite.footer-cite='-Martin Golding'
-    +footer-main('footer-other')
+    .footer-other
+        include ./footer
