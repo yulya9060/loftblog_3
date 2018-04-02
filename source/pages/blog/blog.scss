@@ -113,6 +113,23 @@
     }
 }
 
+.content-left_active{
+    border-right: 3px solid #4e8839;
+
+    & > .content-left__link{
+        color: #4e8839;
+    }
+}
+
+
+.content-left_active{
+    border-right: 3px solid #4e8839;
+
+    & > .content-left__link{
+        color: #4e8839;
+    }
+}
+
 .content-right {
     padding: 0 12px 12px 12px;
     width: 65%;

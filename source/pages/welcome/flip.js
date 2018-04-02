@@ -1,11 +1,22 @@
-var flip = document.querySelector('.welcome__main-link').addEventListener('click',function(){
-  document.querySelector('.welcome-flip').classList.add('flip');
-  document.querySelector('.welcome__main-link').classList.add('authhide');
-  console.log('1');
-});
+let flip = {
+  init(){
+    let link = document.querySelector('.welcome__main-link');
+    let flipBtn = document.getElementById('btn');
+    let formFlip = document.querySelector('.welcome-flip');
 
-var flipBtn = document.getElementById('btn').addEventListener('click',function(){
-  console.log('dgdg');
-  document.querySelector('.welcome-flip').classList.remove('flip');
-  document.querySelector('.welcome__main-link').classList.remove('authhide');
-});
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      console.log('111');
+      formFlip.classList.add('flip');
+      link.classList.add('authhide');
+    })
+
+    flipBtn.addEventListener('click',e=>{
+      e.preventDefault();
+      console.log('222');
+      formFlip.classList.remove('flip');
+      link.classList.remove('authhide');
+    })
+    }
+}
+export default flip;
