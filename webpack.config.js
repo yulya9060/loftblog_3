@@ -65,6 +65,7 @@ const common = merge([
   images(),
   fonts(),
   pug(),
+  babel()
   // lintJS({ paths: PATHS.sources }),
   
   ]);
@@ -82,8 +83,7 @@ module.exports = function(env) {
     return merge([
       common,
       devserver(),
-      sass(),
-      babel()
+      sass()
     ]);
   }
 };
