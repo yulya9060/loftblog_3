@@ -20,6 +20,11 @@ mixin welcomeNav(pages,className,welcome)
                 each item in pages
                     li(class=`${className}__item`)
                         a(class=`${className}__link` href=`./${item.page}.html`)=item.title
+    else if (welcome==2)
+        ul(class=`${className}__list`)
+                each item in pages
+                    li(class=`${className}__item`)
+                        input(class=`${className}__link` id='btn' type='submit' value=item.title)
     else
         ul(class=`${className}__list`)
             each item in pages
@@ -34,26 +39,22 @@ mixin svgIcon(className, path, symbol)
 mixin img(className,path,alt)
     img(src =`${path}`, class=`${className}`, alt=`${alt}`)
 
-
-mixin underlineText(title,text,className)
-    .underline-title
-        .underline-title__main-title
-            h2(class=`title-underline title-underline_${className}`)= `${title}`
-            div(class=`underline-${className}`)
-            if `${text}`.length>0
-                div(class= `underline-title__desc underline-title__${className}`)
-                    p= `${text}`
-
-
-mixin footer-main(className)
-    -var text = [" &#169; Салтрукович Юлия","создано с любовью в LoftSchool","2018"]
-    div(class=`${className}`)
-        .footer__title
-            each item in text
-                span.footer__item!=item
-
 mixin triangle(page)
     .section-poly
         svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="triangle")
             polygon(class = `${page}-left` points="0,0   0,86   500.8,86   500.8,75.5")
             polygon(class = `${page}-right` points="1000,0   1000,86   500,86   500,75.5")
+
+mixin fixedNav(page)
+    .fixed
+        nav.fixed-nav
+            ul.fixed-nav__list
+                -var nav=[{page:'Авторизация',href:'./welcome.html'},{page:'Мои работы',href:'./works.html'},{page:'Блог',href:'./blog.html'},{page:'Обо мне',href:'./about.html'}]
+                each item in nav
+                    if (item.page==page)
+                        li.fixed-nav__item.fixed-nav_active
+                            a(href=`${item.href}`).fixed-nav__link= item.page
+                    else 
+                        li.fixed-nav__item
+                            a(href=`${item.href}`).fixed-nav__link= item.page
+                    

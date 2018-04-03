@@ -1,3 +1,8 @@
+import '../../assets/js/base.js';
+import '../../components/fixedNav/fixedNav.js';
+import hamb from '../../components/hamburger/hamburger.js';
+import '../../components/header/header.js';
+import '../../components/footer/footer.js';
 import './about.scss';
-import '../../fonts/fonts.scss';
-import '../../assets/js/mapbasics.js';
+
+hamb.init();

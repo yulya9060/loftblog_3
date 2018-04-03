@@ -4,11 +4,7 @@ section.header.section-header
     .header-container
         header.section-header-top
             +socialIcons('social_main', [{link:'http://vk.com',img: 'vk'},{link:'http://vk.com',img: 'github'},{link:'http://vk.com',img: 'in'}])
-            .hamburger-menu
-                .hamburger-icon
-                    input(class='visuallyHidden hamburger',type="checkbox",name='hamburger')
-                    .hamburger-check
-                        +svgIcon('hamburger-menu__img','./images/sprite.svg','hamburger')
+            include ./hamburger/hamburger
         .section-header-main
             .describe-image_other.describe-image
                 img.describe-image__photo(src=("./images/photo.jpg"), alt="")

@@ -1,179 +1,4 @@
-@import '../../assets/sass/base.scss';
-
-
-.social_main {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    padding: 0 10px 0 10px;
-    &__link{
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        }
-
-    &__img{
-    max-width: 100%;
-    max-height: 100%;
-    fill: rgba(255,255,255, .8);
-    &:hover{
-        fill: $green;
-    }
-}
-&__list{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-&__item + &__item{
-    margin-left: 15px;
-}
-}
-
-
-.section-header{
-    font-family: 'Roboto',  Arial, Helvetica, sans-serif;
-    background-image: url('../../images/bkgs/forest.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: $white;
-    font-weight: normal;
-    font-style: normal;
-    min-width: 600px;
-    flex-direction: column;
-    min-height: 650px;
-    height: 100vh;
-    position: relative;
-}
-
-.section-header-top {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 10px;
-    flex: 0 0 auto;
-}
-
-.header-container{
-    padding: 20px 30px;
-    height: 90%;
-}
-.hamburger-menu {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
-.hamburger-check{
-    width: 40px;
-    height: 40px;
-}
-.hamburger-menu__img {
-    max-width: 100%;
-    max-height: 100%;
-    fill: white;
-    cursor: pointer;
-}
-
-.describe{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 250px;
-    max-width: 90%;
-    z-index: 200;
-    justify-content: center;
-    &-image{
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-bottom: 15px;
-
-        &__photo{
-       
-            max-width: 100%;
-     }
-
-    }
-
-        &-text{
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            color: #ffffff;
-            font-weight: normal;
-            font-style: normal;
-            display: block;
-            margin-bottom: 30px;
-            width: 100%;
-            padding: 0 60px;
-            text-align: center;
-        }
-
-        &-title{
-            font-weight: 500;
-            font-style: normal;
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        &-desc{
-            font-weight: 500;
-            font-style: normal;
-            font-size: 16px;
-        }
-}
-
-.section-header-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    position: relative;
-    flex: 1 0 auto;
-    flex-direction: column;
-    height: 80%;
-}
-
-.describe-text {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    font-weight: normal;
-    font-style: normal;
-    display: block;
-    margin-bottom: 30px;
-    width: 100%;
-    padding: 0 60px;
-    text-align: center;
-}
-
-
-.arrow {
-    width: 24px;
-    height: 24px;
-    display: block;
-    &:hover > .arrow__img{
-        fill: $gray;
-    }
-}
-
-.arrow__img {
-    max-width: 100%;
-    max-height: 100%;
-    fill: #c3d5cb;
-}
-
-.arrow-content {
-    position: absolute;
-    top: 112%;
-    left: 49.4%;
-    display: block;
-    content: "";
-}
-
-
+@import '../../assets/sass/mixins.scss';
 
 .about-me {
     width: 100%;
@@ -182,6 +7,13 @@
     align-items: center;
     margin-bottom: 40px;
     position: relative;
+
+ @include desctop{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+ }
+
 }
 .about-me__title-about {
     margin-bottom: 40px;
@@ -194,30 +26,23 @@
 }
 
 .content-me {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
     background-color: #ebefe2;
-    padding: 10px 60px;
+    padding: 0;
     position: relative;
-}
 
-.title-underline_about {
-    color: #373e42;
-    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 63px;
-    text-align: center;
-    z-index: 100;
-
-    &:after{
-        background-color:#373e42;
-        border: 2px solid #373e42;
+    @include laptop{
+        width: 50%;
+        padding: 10px 60px;
+        padding: 10px;
     }
 }
+
+
 
 .who-am__title-who{
     margin-bottom: 40px;
@@ -228,20 +53,20 @@
     flex-direction: column;
     align-items: center;
 }
-.title-underline_who{
-    color: #566358;
-    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 35px;
-    text-align: center;
-}
+
 
 
 .about-me-img {
-    min-width: 400px;
-    height: 387px;
+
+    width: 320px;
+    height: 283px;
     text-align: center;
+
+    @include tablets{
+        width: 437px;
+        height: 400px;
+        text-align: center;
+    }
 }
 
 .about-me-img__photo {
@@ -254,6 +79,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
 
 }
 
@@ -268,17 +94,19 @@
 
 
 .content-me_white {
-    background-color: white;
+    background-color: #ebefe2;
+    padding: 10px;
+
+    @include tablets{
+        background-color:  #f4f5f0;
+    }
+
+    @include laptop{
+        background-color: $white;
+    }
 }
 
-.title-underline_utility{
-    color: #566358;
-    font-family: 'SansusWebissimo', Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 35px;
-    text-align: center;
-}
+
 .utility-desc__text{
     color: #566358;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -286,6 +114,12 @@
     font-style: normal;
     font-size: 16px;
     text-align: left;
+
+    @include tablets{
+        text-align: justify;
+    padding-left: 140px;
+    padding-right: 140px;
+    }
 }
 .utility-desc {
     display: flex;
@@ -310,9 +144,17 @@
     font-style: normal;
     color: #566358;
     font-size: 28px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
     display: block;
+
+    @include tablets{
+        text-align: center;
+    }
+    
+    @include laptop{
+        text-align: left;
+    }
 }
 
 .utility-skills {
@@ -330,12 +172,24 @@
 .skills-list {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 
-    &__item + &__item{
-        margin-left: 37px;
+   
+
+    @include tablets{
+        justify-content: center;
+        &__item + &__item{
+            margin-left: 37px;
+        }
+
+        @include laptop{
+            justify-content: flex-start;
+            &__item + &__item{
+                margin-left: 37px;
+            }
     }
+}
 }
 
 .skills-group-item {
@@ -344,17 +198,21 @@
 
 #map {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .map{
     position: relative;
-    height: 100vh;
 }
 
 .content-about{
     width: 100%;
     display: flex;
+    flex-direction: column;
+
+    @include laptop{
+        flex-direction: row;
+    }
 }
 
 .title-underline_about{
@@ -404,6 +262,20 @@
     top: -54px;
     transform: translateX(-3%);
     position: absolute;
+
+    @include tablets{
+        height: 10%;
+        width: 45%;
+        left:50%;
+        bottom: 0;
+        top: 0;
+        transform: translateX(-50%);
+    }
+    @include desctop{
+        height: 26%;
+        left: -73px;
+        top: -34px;
+    }
 &__img{
     width: 100%;
     height: 100%;
@@ -428,17 +300,24 @@
 }
 
 .contacts{
-    background-color: rgba(255,255,255, .5);
+    background-color: rgba(252,252,252, .85);
        align-items: center;
         border-radius:2px;
         display: flex;
         content: "";
         position: absolute;
-        top: 22%;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: column;
         padding-bottom: 15px;
+        width: 100%;
+        top: 0;
+
+        @include tablets{
+            top: 18%;
+            width: auto;
+            padding-bottom: 0;
+        }
 }
 
 .contacts__list{
@@ -478,6 +357,12 @@
 .who-am__desc > p{
     margin-bottom: 10px;
 
+    @include tablets{
+        text-align: justify;
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+
     &:last-of-type{
         margin-bottom: 0;
     }
@@ -492,7 +377,13 @@
     }
 
     &>.about-right{
-        fill: $white;
+        fill: #ebefe2;
+
+        @include laptop{
+            fill: $white;
+        }
     }
 
 }
+
+

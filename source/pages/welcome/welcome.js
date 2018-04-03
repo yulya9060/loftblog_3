@@ -1,4 +1,6 @@
+import flip from './flip.js';
+import '../../assets/js/base.js';
+import '../../components/footer/footer.js';
 import './welcome.scss';
-import '../../fonts/fonts.scss';
-import './flip.js';
-import '../../images/sprite.svg';
+
+flip.init();

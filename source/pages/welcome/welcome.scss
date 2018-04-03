@@ -1,42 +1,81 @@
-@import '../../assets/sass/base.scss';
+@import '../../assets/sass/mixins.scss';
 
 .welcome{
     font-family: 'Roboto',  Arial, Helvetica, sans-serif;
-    background-image: url('../../images/bkgs/forest.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: $white;
     font-weight: normal;
     font-style: normal;
     height: 100vh;
+
+    &-bg{
+            background-image: url('../../images/bkgs/forest-s.png');
+            background-color: #d2d2d2;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
     
-    @include desctop{
-        background-image: url('../../images/bkgs/desctop.png');    
+     @include tablets{
+         
+             background-color: #d2d2d2;
+            background-image: url('../../images/bkgs/forest-m.png');
     }
 
+        @include laptop{
+       
+            background-color: #d2d2d2;
+            background-image: url('../../images/bkgs/forest-l.png');
+    }
+
+ @include desctop{
+       
+             background-color: #d2d2d2;
+            background-image:url('../../images/bkgs/forest-xl.png');
+
+         }
+
+
+    }
     &__header{
-        padding: 20px 55px 20px 20px;
+        padding: 20px;
+        justify-content: center;
         display: flex;
-        justify-content: flex-end;
         margin-bottom: 20px;
 
         @include desctop{
             padding: 22px 92px 20px 20px;
-            margin-bottom: 170px;
+            justify-content: flex-end;
         }
+            @include laptop{
+       
+           padding: 20px 55px 20px 20px;
+            justify-content: flex-end;
+    }
+      @include tablets{
+         
+           padding: 20px 55px 20px 20px;
+            justify-content: flex-end;
+    }
 }
     &__content{
         justify-content: center;
-        margin-bottom: 40px;
+        margin-bottom: 0;
         align-items: center;
         flex-direction: column;
+
+        @include tablets{
+            margin-bottom: 40px;
+        }
 }
 
     &-describe{
         background-color: rgba(0, 0, 0, 0.4);
-        padding: 40px 20px 36px 20px;
+        padding: 10px;
+       
         width: 100%;
+
+        @include tablets{
+            padding: 40px 20px 36px 20px;
+        }
 
         &__img{
         max-width: 140px;
@@ -44,6 +83,11 @@
         border-radius: 50%;
         overflow: hidden;
         margin: 0 auto 15px;
+
+        @include minphones{
+            max-width: 130px;
+            max-height: 130px;
+        }
         }
 
         &__text{
@@ -159,6 +203,14 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+    font-size: 16px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+     font-weight: 400;
+    font-style: normal;
+
+    @include minphones{
+        padding:10px;
+    }
 
     &:hover{
         background-color: #487e38;
@@ -173,16 +225,6 @@
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
-}
-
-.footer__title{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 20px 0 20px 0;
-
-    
-
 }
 
 
@@ -204,9 +246,8 @@
     &-row {
         display: flex;
         flex-grow: 1;
-        margin: 0 10px;
         position: relative;
-        max-width: 100%;
+        width: 100%;
         margin-bottom: 19px;
 
         &__title{
@@ -229,8 +270,8 @@
         outline: none;
         border-radius: 25px;
         border: 0;
-        width: 300px;
-        height: 24px;
+        width: 100%;
+        height: 44px;
         background-color: #ffffff;
 }
 }
@@ -262,6 +303,7 @@
 
 .form-row__label{
     position: relative;
+    width: 100%;
 }
 .form__input_login {
     position: absolute;
@@ -384,10 +426,9 @@
 }
 /* весь контейнер поддерживает перспективу */
 .welcome-flip {
-perspective: 1000;
+perspective: 1000px;
 max-width: 85%;
-min-height: 396px;
-min-width: 380px;
+min-width: 320px;
 }
 // /* переверните сторону при проведении мышью */
 // .flip-container:hover .flipper, .flip-container.hover .flipper {
@@ -403,7 +444,7 @@ position: relative;
 }
 
 /* скройте обратную сторону во время переворота */
-.welcome-front, .welcome-back {
+.welcome-back {
 backface-visibility: hidden;
 position: absolute;
 content: "";
@@ -415,6 +456,8 @@ width: 100%;
 /* лицевая сторона размещена над обратной */
 .welcome-front {
 z-index: 2;
+position: relative;
+backface-visibility: hidden;
 }
 /* обратная, изначально скрытая сторона */
 
@@ -425,3 +468,4 @@ transform: rotateY(180deg);
 .welcome-flip.flip .flipper {
     transform: rotateY(180deg);
     }
+
