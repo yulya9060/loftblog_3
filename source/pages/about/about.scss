@@ -199,6 +199,14 @@
 #map {
     width: 100%;
     height: 100vh;
+    margin-bottom: -346px;
+
+    @include tablets{
+        margin-bottom: -273px;
+    }
+    @include laptop{
+        margin-bottom: -180px;
+    }
 }
 
 .map{

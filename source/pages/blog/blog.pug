@@ -14,9 +14,9 @@ block wrapper
                 aside.content-left
                     -var articles = ['Самое важное в SASS','Приемы в верстке, без которых не обходится не один сайт','Приемы в верстке, без которых не обходится не один сайт','Самое важное в SASS']
                     ul.content-left__list
-                        each link in articles
+                        each link,index in articles
                             li.content-left__item
-                                a.content-left__link= link
+                                a(href='').content-left__link= link
                 section.content-right
                     article.article
                         h2.article-title= 'Саамое важное в SASS'
