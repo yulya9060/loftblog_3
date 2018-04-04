@@ -13,6 +13,7 @@ let scrollArticle = {
         let elem = document.querySelector('.content-right');
         let articles = document.querySelectorAll('.article');
         let links = document.querySelectorAll('.content-left__item');
+        let a = document.querySelectorAll('.content-left__link');
         let textsOffset = [];
 
         articles.forEach((article)=>{textsOffset.push(article.offsetTop)});
@@ -26,6 +27,19 @@ let scrollArticle = {
                 links[i].classList.add('content-left_active');
                 }
             })
+        })
+
+        Array.prototype.filter.call(a,(href)=>{
+            href.addEventListener('click',(e)=>{
+                //debugger;
+                console.log('erewrewrw');
+                e.preventDefault();
+                textsOffset.forEach((offset)=>{
+                   window.scrollTo(0,offset);
+                    }
+
+            )
+        })
         })
     }
 }
