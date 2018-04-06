@@ -58,7 +58,10 @@ const common = merge([
       }),
       new CleanWebpackPlugin(PATHS.build),
       new OptimizeCssAssetsWebpackPlugin({
-        cssProcessorOptions: { discardComments: { removeAll: true } },
+        cssProcessorOptions: { 
+          discardComments: { removeAll: true },
+          safe: true
+         },
       }),
     ],
   },
