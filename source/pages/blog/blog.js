@@ -13,6 +13,7 @@ let scrollArticle = {
         let elem = document.querySelector('.content-right');
         let articles = document.querySelectorAll('.article');
         let links = document.querySelectorAll('.content-left__item');
+        let a = document.querySelectorAll('.content-left__link');
         let textsOffset = [];
 
         articles.forEach((article)=>{textsOffset.push(article.offsetTop)});
@@ -27,6 +28,7 @@ let scrollArticle = {
                 }
             })
         })
+
     }
 }
 
