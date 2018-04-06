@@ -30,8 +30,6 @@ let scrollArticle = {
             })
         })
 
-      
-
         // for(var i=0;i<href.length;i++){
         //     href[i].addEventListener('click',function(e){
         //         //e.preventDefault();
