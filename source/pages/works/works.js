@@ -6,3 +6,4 @@ import '../../components/footer/footer.js';
 import './work.scss';
 
 hamb.init();
+console.log('1');

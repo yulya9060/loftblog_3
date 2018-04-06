@@ -60,7 +60,7 @@ const common = merge([
       new OptimizeCssAssetsWebpackPlugin({
         cssProcessorOptions: { 
           discardComments: { removeAll: true },
-          safe: true
+          safe: true,
          },
       }),
     ],
