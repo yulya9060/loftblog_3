@@ -29,18 +29,6 @@ let scrollArticle = {
             })
         })
 
-        Array.prototype.filter.call(a,(href)=>{
-            href.addEventListener('click',(e)=>{
-                //debugger;
-                console.log('erewrewrw');
-                e.preventDefault();
-                textsOffset.forEach((offset)=>{
-                   window.scrollTo(0,offset);
-                    }
-
-            )
-        })
-        })
     }
 }
 
