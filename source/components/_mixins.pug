@@ -24,7 +24,7 @@ mixin welcomeNav(pages,className,welcome)
         ul(class=`${className}__list`)
                 each item,index in pages
                     li(class=`${className}__item`)
-                        input(class=`${className}__link` id=`btn${index}` type='submit' value=item.title)
+                        input(class=`${className}__link`, id=`btn${index}`, type="submit", value=item.title)
     else
         ul(class=`${className}__list`)
             each item in pages
