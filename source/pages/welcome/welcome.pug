@@ -32,30 +32,30 @@ block wrapper
                                                 +svgIcon('form__img','./images/sprite.svg','login')
                                             label.form-row__label.error-label
                                                 input(type="text", name="login", placeholder="Логин" class="form__input field")
-                                                span.error
+                                            span.error
                                         .form-row
                                             span.form__input_login
                                             span.input-back
                                                 +svgIcon('form__img','./images/sprite.svg','password')
                                             label.form-row__label.error-label
                                                 input(type="password", name="password", placeholder="Пароль" class="form__input field")
-                                                span.error
+                                            span.error
                                         .form-column  
                                             label.check-label.error-label
                                                 input(type="checkbox", name="robot" class='visuallyHidden robot field')
                                                 .form__checkbox-fake
                                                 .form__checkbox-fake-title='Я человек'
-                                                span.error
+                                            span.error.error_left
                                         .form-column
                                             h3.form-row__title='Вы точно не робот?'
                                             span.error
                                         .form-column
                                             label.check-label.check-label_margin-right.error-label
-                                                input(type="radio", name="radio" class='visuallyHidden radio-fake field' checked)
+                                                input(type="radio", name="radio" value="noRobot" class='visuallyHidden radio-fake field' checked)
                                                 .form__radio-fake
                                                 .form__radio-fake-title='Я Да'
                                             label.check-label.check-label_margin-right.error-label
-                                                input(type="radio", name="radio" class='visuallyHidden radio-fake field')
+                                                input(type="radio", name="radio" value="yesRobot" class='visuallyHidden radio-fake field')
                                                 .form__radio-fake
                                                 .form__radio-fake-title='Не уверен'
                                     +welcomeNav([{page:'welcome',title:'На главную'},{page:'about',title:'Войти'}],'welcome-btns',2)

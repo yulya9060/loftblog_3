@@ -489,4 +489,17 @@ transform: rotateY(180deg);
                 max-height: 100%;
             }
         }
+        .form-control_error {
+            border-color: #d99;
+        }
  
+        .form-row_error{
+            margin-bottom: 0px;
+            padding-bottom: 45px;
+        }
+        
+        .form-column_error{
+            margin-bottom: 0;
+            padding-bottom: 45px;
+        }
+        

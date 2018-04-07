@@ -18,8 +18,9 @@ let webglMobile={
 
 let validateForm={
     init(){
-        const welcomeForm = document.querySelector('.form-auth');
-        const errorField = welcomeForm.querySelectorAll('.error');
+        const form = document.querySelector('.form-auth');
+        const elementsForm = form.querySelectorAll('.field');
+        const notInput =['button','span','div']
         const errorMess	= [
             'Введите логин',
             'Введите пароль',
@@ -31,63 +32,73 @@ let validateForm={
             'Напишите текст сообщения', // [5]
             'Ваше сообщение похоже на спам, уберите специальные символы.' // [6]
         ]
-        let validate=(fields)=>{
+
+        let allElem = ()=>{
+            for (var i=0;i<elementsForm.length;i++){
+                    var elem = valid(elementsForm[i]);
+                    console.log('1',elementsForm[i]);
+                    console.log('2',elem);
+                    return elem;
+            }
             
-            if (!fields.login.value){
-                generateError(errorMess[0],fields.login);
-                console.log('1',errorMess[0],fields.login);
-                return false;
-            }
-            if (!fields.password.value){
-                generateError(errorMess[1],fields.password);
-                console.log('2',errorMess[1]);
-                return false;
-            }
-
-            if (!fields.robot.checked){
-                generateError(errorMess[2],fields.robot);
-                console.log('3',errorMess[2]);
-                return false;
-            }
-            if (fields.radio[4].checked){
-                generateError(errorMess[2],fields.radio);
-                console.log('4',errorMess[2]);
-                return false;
-            }
-
-            return true;
         }
-        
-    
 
-    let removeValidation=(form)=>{
-        var errors = form.querySelectorAll('.error');
-        for (var i = 0; i < errors.length; i++) {
-            errors[i].style.display='none';
-  }
-}
-let generateError = (text,field)=> {
-    for (var i = 0; i < errorField.length; i++) {
-        errorField[i].innerHTML = text;
-        errorField[i].style.display='block';
-        console.log(errorField[i]);
-  }
-}
+        let valid = (input)=>{
+            let inputVal = input.value;
+            let inputName = input.name;
+            let err =false;
+            switch (input.name){
+                case 'login':
+                    if (inputVal == ''){
+                        generateError(errorMess[0],input);
+                        err =true;
+                    }
+                    break;
+                case 'password':
+                    if (inputVal == ''){
+                        generateError(errorMess[1],input);
+                        err =true;
+                    }
+                    break;
+                case 'robot':
+                    if (!input.checked){
+                        generateError(errorMess[2],input);
+                        err =true;
+                    }
+                    break;
+                case 'radio':
+                    if (input.checked){
+                        if(input.value=='noRobot')
+                        generateError(errorMess[2],input);
+                        err =true;
+                    }
+                    if (!input.checked){
+                        generateError(errorMess[2],input);
+                        err =true;
+                    }
+                break;
+            }
+            return err;
+        }
 
-welcomeForm.addEventListener('submit',function(e){
+        let generateError= (str,int)=>{
+            console.log(str,int.parentNode.parentNode);
+            const errorField = int.type=='radio'? int.parentNode.parentNode.previousElementSibling.querySelector('.error') : int.parentNode.parentNode.querySelector('.error');
+            errorField.style.display='block';
+            errorField.innerText=str;
+            const formRow = int.closest('.form-row').classList.add('form-row_error');
+            console.log(str,int);
+        }
+
+form.addEventListener('submit',function(e){
     e.preventDefault();
-    const fields = this.querySelectorAll('.field');
-    console.log('fields ',fields);
-    console.log('form ',this.length);
-    removeValidation(this);
-    validate(this);
-    if (validate){
-        console.log('3434');
+    var elements = allElem();
+    if (!elements){
+        console.log('отправляем данные');
     }
+    
 })
-
-}
-};
+}};
 
 webglMobile.init();
 validateForm.init();
