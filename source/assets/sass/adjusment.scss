@@ -229,5 +229,44 @@
 }
 }
 
+.error-label{
+    position: relative;
+}
+
+.error {
+    font-size: 15px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    top: 53%;
+    z-index: 600;
+    padding: 10px;
+    border-radius: 6px;
+    min-height: 38px;
+    display: none;
+    background: #e44845;
+    white-space: nowrap;
+    transform: translateX(-50%);
+
+    &_left{
+        top: 37%;
+    }
+}
+.error:before {
+	width: 0;
+	height: 0;
+	content: '';
+	position: absolute;
+	left: 15px;
+	top: -7px;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	border-bottom: 8px solid #e44845;
+}
+.form-control_error {
+	border-color: red;
+}
+
 
 

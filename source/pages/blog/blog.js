@@ -13,8 +13,9 @@ let scrollArticle = {
         let elem = document.querySelector('.content-right');
         let articles = document.querySelectorAll('.article');
         let links = document.querySelectorAll('.content-left__item');
-        let a = document.querySelectorAll('.content-left__link');
+        let href = document.querySelectorAll('.content-left__link');
         let textsOffset = [];
+        var V=2;
 
         articles.forEach((article)=>{textsOffset.push(article.offsetTop)});
         console.log(textsOffset);
@@ -29,6 +30,25 @@ let scrollArticle = {
             })
         })
 
+        // for(var i=0;i<href.length;i++){
+        //     href[i].addEventListener('click',function(e){
+        //         //e.preventDefault();
+        //         var w = window.pageYOffset;
+        //         //hash = this.href.replace(/[^#]*(.*)/, '$1');
+        //         var t = document.querySelector(href[i]).getBoundingClientRect().top;
+        //         var start = null;
+        //     requestAnimationFrame(step);
+        //     function step(time) {
+        //     if (start === null) start = time;
+        //     var progress = time - start;
+        //     var r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+        //     window.scrollTo(0,r);
+        //     if (r != w + t) {requestAnimationFrame(step)} else {location.href[i] = href[i]}
+        //     }
+        //     return false;
+            
+        //     })
+        // }
     }
 }
 

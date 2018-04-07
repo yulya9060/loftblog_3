@@ -1,7 +1,7 @@
 let flip = {
   init(){
     let link = document.querySelector('.welcome__main-link');
-    let flipBtn = document.getElementById('btn');
+    let flipBtn = document.getElementById('btn0');
     let formFlip = document.querySelector('.welcome-flip');
 
     link.addEventListener('click',e=>{
