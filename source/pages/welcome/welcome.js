@@ -34,45 +34,47 @@ let validateForm={
         ]
 
         let allElem = ()=>{
+            var err=[];
             for (var i=0;i<elementsForm.length;i++){
-                    var elem = valid(elementsForm[i]);
-                    console.log('2valid',elem,elementsForm[i]);
+                    var elem = valid(elementsForm[i],err);
+                    console.log('valid',elem);
             }
-            return elem;
-            
+        return elem;
         }
 
-        let valid = (input)=>{
+        let valid = (input,err)=>{
             let inputVal = input.value;
             let inputName = input.name;
-            let err=" ";
             switch (input.name){
                 case 'login':
-                    if (inputVal == ''){
+                    if (inputVal === ''){
                         generateError(errorMess[0],input);
-                        console.log(' err +=errorMess[0];', err +errorMess[0]);
-                        err +=errorMess[0];
+                        err.push(inputVal);
+                        console.log(' err +=errorMess[0];', err);
+                        
                     }
                     break;
                 case 'password':
-                    if (inputVal == ''){
+                    if (inputVal === ''){
                         generateError(errorMess[1],input);
-                        console.log(' err +=errorMess[0];', err +errorMess[0]);
-                        err +=errorMess[0];
+                        err.push(inputVal);
+                        console.log(' err +=errorMess[1];', err);
+                        
                     }
                     break;
                 case 'robot':
                     if (!input.checked){
                         generateError(errorMess[2],input);
-                        console.log(' err +=errorMess[0];', err +errorMess[0]);
-                        err +=errorMess[0];
+                        err.push(input.checked);
+                        console.log(' err +=errorMess[2];', err );
+                        
                     }
                     break;
                 case 'radio':
                     if ((input.checked) && (input.value=='yesRobot')){
                         generateError(errorMess[2],input);
-                        console.log(' err +=errorMess[0];', err +errorMess[0]);
-                        err +=errorMess[0];
+                        err.push(inputVal);
+                        console.log(' err +=errorMess[3];', err);
                     }
                 break;
             }
@@ -86,19 +88,19 @@ let validateForm={
             errorField.innerText=str;
             if (int.parentNode.parentNode.matches('.form-row')){
                 const formRow = int.closest('.form-row').classList.add('form-row_error');
-                console.log('1',int.parentNode.matches('.form-row'));
+                const formRow1 = int.parentNode.parentNode.querySelector('.input-back').classList.add('input-back_error-red');
             }
             else if (int.parentNode.parentNode.matches('.form-column')){
-                const formRow = int.closest('.form-column').classList.add('form-column_error');
+                const formcolumn = int.closest('.form-column').classList.add('form-column_error');
             }
-            //const formColumn = int.closest('.form-row').classList.add('form-row_error');
-            console.log(str,int);
         }
 
        let clearErrors=(form)=>{
            let error = form.querySelectorAll('.error');
            let row = form.querySelectorAll('.form-row');
            let column = form.querySelectorAll('.form-column');
+           let inputBack = form.querySelectorAll('.input-back');
+           console.log(inputBack);
                 for(var i=0;i<error.length;i++){
                     if (error[i].hasAttribute('style')){
                         error[i].removeAttribute('style');
@@ -114,19 +116,21 @@ let validateForm={
                     if(column[i].classList.contains('form-column_error'))
                         column[i].classList.remove('form-column_error');
                 }
+                for(var i=0;i<inputBack.length;i++){
+                    if(inputBack[i].classList.contains('input-back_error-red'))
+                        inputBack[i].classList.remove('input-back_error-red');
+                }
+
         }
 form.addEventListener('submit',function(e){
     e.preventDefault();
     clearErrors(this);
-    //var errorHide= document.querySelectorAll('.error').style.display='none';
-    // var formRow= this.querySelectorAll('.form-row').classList.remove('form-row_error');
-    // var formColumn= document.querySelectorAll('.form-column').classList.remove('form-column_error');
-    var elements = allElem();
+    var elements;
+    elements = allElem();
     console.log('elements',elements);
-    if (elements.length=0){
+    if (!elements.length){
         console.log('отправляем данные');
     }
-    
 })
 }};
 

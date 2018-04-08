@@ -303,6 +303,9 @@
     left: 12px;
     top: 9px;
     fill: #c4cbcd;
+    &_error-red{
+        fill: red;
+    }
 }
 
 .form-row__label{
@@ -326,9 +329,6 @@
 .form__img{
     max-width: 100%;
     max-height: 100%;
-    &_error-red{
-        fill: red;
-    }
 }
 
 .robot{

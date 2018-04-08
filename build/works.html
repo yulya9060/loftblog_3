@@ -115,6 +115,13 @@
           </section>
         </section>
         <section class="about-me">
+          <div class="about-me__bg">
+            <picture class="about-me__img">
+              <source class="img" srcset="./images/list1200.png" media="(max-width: 768px)">
+              <source class="img" srcset="./images/list1200.png" media="(max-width: 580px)">
+              <source class="img" srcset="./images/list1200.png"><img class="img" srcset="./images/list1200.png" alt="Фон страницы work">
+            </picture>
+          </div>
           <div class="works-title-about">
             <h2 class="title-underline title-underline-about_works">Что обо мне говорят</h2>
             <div class="works-title_about">
@@ -160,22 +167,25 @@
             </div>
           </div>
           <div class="works-form">
+            <div class="blur"></div>
             <h2 class="title-underline title-underline-form">Связаться со мной</h2>
             <div class="auth-form">
-              <form method="POST" name="form-review">
+              <form class="form-review" name="form-review">
                 <div class="auth-form-wrapper">
                   <div class="auth-form-row">
                     <label class="form-row__label">
                       <input class="auth-form__input" type="text" name="name" placeholder="Имя">
-                    </label>
+                    </label><span class="error"></span>
                   </div>
                   <div class="auth-form-row">
                     <label class="form-row__label">
                       <input class="auth-form__input" type="email" name="email" placeholder="E-MAIL">
-                    </label>
+                    </label><span class="error"></span>
                   </div>
                   <div class="auth-form-row">
-                    <textarea class="auth-form__input" rows="10" cols="45" name="message" placeholder="Ваше сообщение"></textarea>
+                    <label class="form-row__label">
+                      <textarea class="auth-form__input" rows="10" cols="45" name="message" placeholder="Ваше сообщение"></textarea>
+                    </label><span class="error form-row-error_textarea"></span>
                   </div>
                   <div class="form-btns">
                     <input class="welcome-btns__link" type="submit" value="Отправить">
