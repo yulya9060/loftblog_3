@@ -255,7 +255,10 @@
             font-family: 'Roboto', Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-style: normal;
+            display: block;
             font-size: 16px;
+            text-align: center;
+            width: 100%;
         }
     }
 
@@ -415,8 +418,10 @@
     display: flex;
     margin: 0 10px;
     position: relative;
-    max-width: 100%;
     margin-bottom: 19px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap:wrap;
 }
 
 .check-label_margin-right{
