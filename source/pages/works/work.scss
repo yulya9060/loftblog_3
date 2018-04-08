@@ -435,14 +435,11 @@
     flex-direction: column;
     align-items: center;
     background-color: #f4f5f0;
-    background-image: url('../../images/bkgs/list1200.png');
     width: 100%;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
     padding-top: 20px;
     padding-bottom: 346px;
     position: relative;
+    overflow: hidden;
 
     @include tablets{
         padding-bottom: 273px;
@@ -555,23 +552,7 @@ img.review__img {
     max-width: 80%;
     border-radius: 5px;
     z-index: 1;
-
-    &:before{
-        position: absolute;
-        content: "";
-        filter: blur(20px);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background-size: contain;
-        background-position: 0px center;
-        background-repeat: initial;
-        background-attachment: fixed;
-        margin: -10px;
-        background-image: url('../../images/bkgs/list1200.png');
-    }
+    overflow: hidden;
 }
 
 
@@ -622,7 +603,11 @@ img.review__img {
 }
 
 .auth-form-row {
-    padding: 15px 20px;
+    padding-left:20px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    position: relative;
 }
 
 .auth-form__input{
@@ -669,4 +654,34 @@ img.review__img {
     &:hover{
         background-color: #487e38;
     }
+}
+
+.form-row_error{
+    margin-bottom: 0px;
+    padding-bottom: 45px;
+    padding-top: 0;
+}
+
+.form-row-error_textarea{
+    top: 79%;
+}
+
+.about-me__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    min-width: 950px;
+    
+}
+
+.blur{
+    background:url('../../images/bkgs/list1200.png') center no-repeat;
+    filter: blur(12px);
+    position: absolute;
+    z-index: -300;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

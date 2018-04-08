@@ -91,6 +91,11 @@
     font-weight: normal;
     font-style: normal;
     font-size: 16px;
+
+    &:active{
+            color: #4e8839;
+        
+    }
 }
 
 .content-left__item {
